@@ -1,0 +1,12 @@
+#!name=网易云音乐VIP解锁
+#!desc=无标识只解锁播放权限
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/NeteaseCloudMusic.png
+
+[Script]
+
+# > 网易云解锁VIP
+http-request ^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ script-path=http://script.hub/convert/_start_/https://raw.githubusercontent.com/WeiRen0/Scripts/main/wyun.js/_end_/wyun.js?type=qx-script&target=surge-script, tag=wyun_4
+
+[MITM]
+
+hostname = *.music.163.com
