@@ -1,0 +1,12 @@
+#!name=华住会签到
+#!desc=需要一次+入住记录才能签到
+#!icon=https://raw.githubusercontent.com/evilbutcher/QuantumultX/master/picture/hzh.png
+
+
+[Script]
+http-request ^https?:\/\/hweb-personalcenter\.huazhu\.com\/login\/autoLogin$ script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/hzh.js, timeout=60, tag=hzhqd
+
+cron "1 0 * * *" script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/hzh.js, timeout=60, tag=hzh
+
+[MITM]
+hostname = *.huazhu.com
