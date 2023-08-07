@@ -1,7 +1,7 @@
 #!name=高德地图签到
 #!desc=Cookie获取：高德地图.打车.福利中心，手动签到一次获取  
 签到里程可兑换打车抵用券
-#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1014.png
+#!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/Amap.png
 
 [Script]
 
