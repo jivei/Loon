@@ -1,0 +1,14 @@
+#!name=bing积分
+#!desc=获取 bingSearch Cookie
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1023.png
+
+[Script]
+
+# > Bing积分
+http-request https:\/\/rewards\.bing\.com script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, tag=Bing积分cookie_10
+
+cron "0 10 0 * * ?" script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, timeout=60, tag=Bing积分
+
+[MITM]
+
+hostname = rewards.bing.com
