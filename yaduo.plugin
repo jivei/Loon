@@ -1,5 +1,6 @@
 #!name=亚朵酒店签到
 #!desc=打开亚朵酒店app->我的->积分，若提示获取cookie成功则可以使用签到脚本
+#!openUrl=https://github.com/jivei/Loon/tree/main
 #!icon=https://raw.githubusercontent.com/jivei/ijivei/main/atour.PNG
 
 
