@@ -1,9 +1,8 @@
 #!name=IT之家每日签到
 #!desc=点击APP-我-右上角获取cookie
-#!openUrl=https://github.com/jivei/Loon/tree/main
-#!icon=https://raw.githubusercontent.com/jivei/ijivei/main/ithome.png
-
-
+main
+#!icon=https://github.com/Keywos/rule/raw/main/tv/app/144px/ithome.png
+#!openUrl=https://github.com/jivei/Loon/tree/
 [Script]
 http-response ^https:\/\/my\.ruanmei\.com\/api\/usersign\/getsigninfo? script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/ithome/ithome.cookie.js
 
