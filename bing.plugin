@@ -1,5 +1,5 @@
 #!name=bing积分
-#!desc=获取 bingSearch Cookie
+#!desc=Safari打开https://rewards.bing.com/ 获取Cookie
 #!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1023.png
 
 [Script]
