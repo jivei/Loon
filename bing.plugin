@@ -1,8 +1,9 @@
 #!name=Bing积分
 #!desc=Safari打开https://rewards.bing.com/ 获取Cookie
+#!icon=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
 #!openUrl=https://github.com/jivei/Loon/tree/main
 
-#!icon=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
+
 [Script]
 
 # > Bing积分
