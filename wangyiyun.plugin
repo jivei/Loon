@@ -1,5 +1,6 @@
 #!name=网易云音乐VIP解锁
 #!desc=无标识只解锁播放权限
+#!openUrl=https://github.com/jivei/Loon/tree/main
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/NeteaseCloudMusic.png
 
 [Script]
