@@ -1,5 +1,6 @@
 #!name=华住会签到
-#!desc=需要一次+入住记录才能签到
+#!desc=新人需要一次+入住记录才能签到
+#!openUrl=https://github.com/jivei/Loon/tree/main
 #!icon=https://raw.githubusercontent.com/evilbutcher/QuantumultX/master/picture/hzh.png
 
 
