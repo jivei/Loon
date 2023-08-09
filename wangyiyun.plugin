@@ -2,7 +2,7 @@
 #!desc=无标识只解锁播放权限
 #!homepage=https://github.com/jivei/Loon/tree/main
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/NeteaseCloudMusic.png
-#!date = 2022-07-08 12:57:09
+#!date=2022-07-08 12:57:09
 [Script]
 
 # 网易云解锁VIP
