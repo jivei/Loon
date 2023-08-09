@@ -2,7 +2,7 @@
 #!desc=新人需要一次+入住记录才能签到
 #!homepage=https://github.com/jivei/Loon/tree/main
 #!icon=https://raw.githubusercontent.com/evilbutcher/QuantumultX/master/picture/hzh.png
-#!date = 2022-07-08 12:57:09
+#!date=2022-07-08 12:57:09
 
 [Script]
 http-request ^https?:\/\/hweb-personalcenter\.huazhu\.com\/login\/autoLogin$ script-path=https://raw.githubusercontent.com/wf021325/qx/master/task/hzh.js, timeout=60, tag=华住会获取cookie
