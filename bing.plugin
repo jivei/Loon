@@ -1,5 +1,5 @@
 #!name=Bing积分
-#!desc=Safari打开下面地址获取Cookie
+#!desc=Safari打开下面地址获取Cookie，若提示获取cookie成功则可以使用签到脚本
 #!openUrl=https://rewards.bing.com/
 #!homepage=https://github.com/jivei/Loon/tree/
 #!icon=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
