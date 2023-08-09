@@ -1,12 +1,13 @@
 #!name=Bing积分
-#!desc=Safari打开https://rewards.bing.com/ 获取Cookie
-#!homepage=https://github.com/jivei/Loon/tree/main
+#!desc=Safari打开下面https://rewards.bing.com/获取Cookie
+#!openUrl=https://rewards.bing.com/
+#!homepage=https://github.com/jivei/Loon/tree/
 #!icon=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Microsoft.png
 #!date = 2022-07-08 12:57:09
 
 [Script]
-# > Bing积分
-http-request https:\/\/rewards\.bing\.com script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, tag=Bing积分cookie_10
-cron "0 10 0 * * ?" script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, timeout=60, tag=Bing积分
+# Bing积分
+http-request https:\/\/rewards\.bing\.com script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, tag=Bing积分cookie
+cron "0 10 0 * * ?" script-path=https://raw.githubusercontent.com/lowking/Scripts/master/bing/bingPoint.js, timeout=60, tag=Bing积分任务
 [MITM]
 hostname = rewards.bing.com
