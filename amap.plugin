@@ -1,6 +1,6 @@
 #!name=高德地图打车签到
 #!desc=地图APP + 微信小程序 + 支付宝小程序 =  3 倍快乐🥰，获取Cookie等信息方法 进入高德地图-打车-福利中心，若提示获取cookie成功则可以使用签到脚本
-#!openUrl=https://rewards.bing.com/
+#!openUrl=
 #!homepage=https://github.com/jivei/Loon/tree/
 #!icon=https://raw.githubusercontent.com/Crazy-Z7/Task/main/Image/IMG_0967.jpeg
 #!date=2022-07-08 12:57:09
