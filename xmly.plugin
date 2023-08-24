@@ -1,0 +1,44 @@
+#!name = 喜马拉雅破解
+#!desc = 修改会员等级
+#!openUrl = 
+#!author = 佚名
+#!homepage = https://gitlab.com/lodepuly/vpn_tool/-/tree/main/Tool/Loon/Plugin
+#!icon = https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/Himalaya.png
+#!date=2022-07-08 12:57:09
+[Rule]
+
+DOMAIN,gslbali.ximalaya.com,REJECT
+DOMAIN,gslbtx.ximalaya.com,REJECT
+
+[Rewrite]
+
+^https?:\/\/xdcs-collector\.ximalaya\.com\/(api|nyx)\/v1 - reject
+^https?:\/\/.*\.ximalaya\.com\/mobile-playpage\/view\/ - reject
+^https?:\/\/.*\.ximalaya\.com\/chaos-notice-web\/v1\/message\/preview\/list - reject
+^https?:\/\/.*\.ximalaya\.com\/social-web\/bottomTabs\/dynamicEntrance\/status - reject
+^https?:\/\/.*\.xmcdn\.com\/\w{8}\/\w{4}-\w{16}\/.+gif$ - reject
+^https?:\/\/.*\.ximalaya\.com\/(dog-portal\/checkOld|(child-mobile\/child|aged-mobile\/aged)\/mode\/query) - reject
+^https?:\/\/.*\.ximalaya\.com\/discovery-feed\/isShowUserGiftPendant - reject
+^https?:\/\/.*\.ximalaya\.com\/mobile-user\/unread - reject
+^https?:\/\/.*\.ximalaya\.com/mobile-user/minorProtection/pop - reject
+^https?:\/\/.*\.ximalaya\.com\/collector\/xl\/v\d - reject
+^https?:\/\/.*\.ximalaya\.com\/butler-portal\/versionCheck - reject
+^https?:\/\/(adse\.wsa|adse|adbehavior)\.ximalaya\.com\/.* - reject
+^https?:\/\/.*\.ximalaya\.com\/mobile\/discovery\/v\d\/location - reject
+^https?:\/\/.*\.ximalaya\.com\/hotWord - reject
+^https?:\/\/.*\.ximalaya\.com\/guideWord - reject
+^https?:\/\/.*\.ximalaya\.com\/api\/v\d\/adRealTime - reject
+^https?:\/\/.*\.ximalaya\.com\/ting\/(loading|feed|home)? - reject
+^https?:\/\/.*\.ximalaya\.com\/discovery-feed\/focus\/queryF - reject
+
+[Script]
+
+http-response ^https?:\/\/(mobile|mobilehera|mobwsa|mwsa|m|ar)\.ximalaya\.com\/(mobile\/(v\d\/album\/track|album\/paid\/info)|nyx\/history\/query\/detail|starwar\/task|vip\/(check|tabs|v\d\/recommand)|mobile-(user|album\/album\/page|playpage\/(playpage\/(tabs|recommendInfo)|track))|product\/(promotion|detail\/v1\/basicInfo)|business-vip-|(playlist|rec-association\/recommend)\/album) script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/XMLY/xmly.js, requires-body=true, tag=喜马拉雅会员_26
+
+#http-request ^https?:\/\/(mobile|mobilehera|mobwsa|pns)\.ximalaya\.com\/(mobile-playpage|mobile\/(quickplay|acceptapn)|comment-mobile/get|sound-guide-portal\/(sound\/guide|display)) script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/XMLY/xmly_crack.js, tag=喜马拉雅共享_27
+#喜马拉雅共享 = type=http-request,requires-body=0,max-size=0,pattern=^https?:\/\/(mobile|mobilehera|mobwsa|pns)\.ximalaya\.com\/(mobile-playpage|mobile\/(quickplay|acceptapn)|comment-mobile/get|sound-guide-portal\/(sound\/guide|display)),script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/XMLY/xmly_crack.js
+http-response ^https?:\/\/(mobile|mobilehera|mobwsa)\.ximalaya\.com\/focus-mobile\/focusPic\/info script-path=https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/XMLY/noFocusAd.js, requires-body=true, tag=喜马拉雅去轮盘广告_28
+
+[MITM]
+
+hostname = *.ximalaya.com
