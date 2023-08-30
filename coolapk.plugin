@@ -1,0 +1,33 @@
+#!name=酷安净化
+#!desc=by墨鱼
+#!openUrl=
+#!homepage=https://github.com/jivei/Loon/tree/
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1055.png
+#!date=2022-07-08 12:57:09
+
+
+[Rewrite]
+
+# > 酷安_屏蔽热词@ddgksf2013
+^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-dict
+
+[Script]
+
+# > 酷安_开屏广告@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/main\/init script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, tag=coolapk_16_4
+
+# > 酷安_推广广告@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/dataList script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, tag=coolapk_18_6
+
+# > 酷安_首页广告@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/main\/indexV8 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, tag=coolapk_20_8
+
+# > 酷安_评论广告@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/feed\/replyList script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, tag=coolapk_22_10
+
+# > 酷安_商品推广@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/feed\/detail script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, tag=coolapk_24_12
+
+[MITM]
+
+hostname = api.coolapk.com
