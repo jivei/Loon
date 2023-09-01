@@ -4,59 +4,17 @@
 #!update = 2023-08-31 23:35
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/Ads.png
 
-
-[Rule]
-DOMAIN, api.iqiyi.com, REJECT
-DOMAIN, adsmind.ugdtimg.com, REJECT
-DOMAIN, amdc.m.youku.com, REJECT
-DOMAIN, apiv4-iyes.youku.com, REJECT
-DOMAIN, httpdns.alicdn.com, REJECT
-DOMAIN, huichuan-mc.sm.cn, REJECT
-DOMAIN, huichuan.sm.cn, REJECT
-DOMAIN, iyes.youku.cn, REJECT
-DOMAIN, vail-ugc.cp31.ott.cibntv.net, REJECT
-DOMAIN, vali.cp31.ott.cibntv.net, REJECT
-DOMAIN, valipl.cp31.ott.cibntv.net, REJECT
-DOMAIN, yk-ssp.ad.youku.com, REJECT
-DOMAIN, ykad-data.youku.com, REJECT
-
-
-DOMAIN, btrace,qq.com, REJECT
-DOMAIN, info4.video.qq.com, REJECT
-DOMAIN, info6.video.qq.com, REJECT
-DOMAIN, ios.video.mpush.qq.com, REJECT
-DOMAIN, mtrace.qq.com, REJECT
-DOMAIN, pgdt.gtimg.cn, REJECT
-DOMAIN, vv.video.qq.com, REJECT
 [Rewrite]
 
 ^https:\/\/iface2\.iqiyi\.com\/views_pop\/3\.0\/pop_control\? - reject-dict
 # 播放页,开通会员提示
 ^https:\/\/act\.vip\.iqiyi\.com\/interact\/api\/v2\/show\? - reject-dict
-# 芒果tv //dc.bz.mgtv.com, me.bz.mgtv.com
-^http:\/\/[0-9\.]+\/odin\/c1\/channel\/ads\? - reject-dict
-^https?:\/\/vipcdn\.mgtv\.com\/act_ugc\/billing\/20220825\/tmp\/acf2efcc245911edbe6e00163e308875\.png reject-img
-^https?:\/\/video\.da\.mgtv\.com reject-dict
-^https?:\/\/playgift\.api\.mgtv\.com\/play\/gift\/api\/play\/config reject-200
-^https?:\/\/pcvideoaliyun\.titan\.mgtv\.com reject-dict
-^https?:\/\/mobile\.da\.mgtv\.com\/m\/page reject-200
-^https?:\/\/mobile\.da\.mgtv\.com\/json\/app\/bdboot reject-200
-^https?:\/\/mobile\.da\.mgtv\.com\/creative\/list reject-dict
-^https?:\/\/mobile\.da\.mgtv\.com\/app\/el reject-200
-^https?:\/\/mobile\.api\.mgtv\.com\/v2\/mobile\/checkUpdate reject-200
-^https?:\/\/mob\.bz\.mgtv\.com\/odin\/c1\/skin\/config reject-200
-^https?:\/\/mob\.bz\.mgtv\.com\/odin\/c1\/skin\/config reject-200
-^https?:\/\/me2\.bz\.mgtv\.com\/v3\/module\/list\.\+ reject-dict
-^https?:\/\/me\.bz\.mgtv\.com\/v3\/module\/list reject-200
-^https?:\/\/me\.bz\.mgtv\.com\/v3\/module\/list reject-200
-^https?:\/\/layer\.bz\.mgtv\.com\/layer\/confv2 reject-200
-^https?:\/\/layer\.bz\.mgtv\.com\/layer\/confv2 reject-200
-^https?:\/\/img\.da\.mgtv\.com\/mediafiles\/wiad_creative\/1008\/\*\.gif reject-img
-^https?:\/\/floor\.bz\.mgtv\.com\/floor\/detail\.\+ reject-200
-^https?:\/\/credits\.bz\.mgtv\.com\/credits\/selectedToast reject-dict
-^http:\/\/rc-topic-api\.bz\.mgtv\.com\/rc\/topic\/rank reject-200
-^http:\/\/iphone\.v0\.mgtv\.com\/show\.php?abroad\.\+ reject-200
-^http:\/\/dflow\.bz\.mgtv\.com\/flow\/getExtensionPosition reject-200
+# 首页,左上角推广,信息流,底部菜单红点,顶部菜单,搜索框
+^http:\/\/[0-9\.]+\/odin\/c1\/(channel\/ads|skin\/config)\? - reject-dict
+^http:\/\/mobileso\.bz\.mgtv\.com\/spotlight\/search\/v1\? - reject-dict
+^https:\/\/damang\.api\.mgtv\.com\/station\/album\/red\/dot\? - reject-dict
+# 升级弹窗
+^https:\/\/mobile\.api\.mgtv\.com\/v2\/mobile\/checkUpdate\? - reject-dict
 # 腾讯视频
 ^http:\/\/[0-9\.:]*\/?(defaultts|vmind\.qqvideo)\.tc\.qq\.com\/\w+ - reject
 ^http:\/\/apd-vlive\.apdcdn\.tc\.qq\.com\/vmind\.qqvideo\.tc\.qq\.com\/\w+ - reject
@@ -66,7 +24,7 @@ DOMAIN, vv.video.qq.com, REJECT
 
 # 开屏广告,播放广告
 http-response ^http:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_6
-http-response ^http:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\? script-path=https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/iQiYi_Video/iQiYi_Video_remove_ads.js, requires-body=true, timeout=10, tag=移除开屏和播放广告
+
 # 首页,信息流广告,我的页面,左上角天气,底部菜单,顶部菜单,青少年弹窗
 http-response ^http:\/\/[0-9\.]+\/3f1\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_8
 
@@ -90,31 +48,32 @@ http-response ^https:\/\/search\.video\.iqiyi\.com\/q\? script-path=https://raw.
 # 评论区
 http-response ^https:\/\/comment-card\.iqiyi\.com\/views_comment\/3\.0\/long_video_comments\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_22
 
-http-response ^http:\/\/mob-st\.bz\.mgtv\.com\/odin\/c1\/channel\/index\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_25
+http-response ^http:\/\/mob-st\.bz\.mgtv\.com\/odin\/c1\/channel\/index\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_26
 
-http-response ^https:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_26
+http-response ^https?:\/\/dc\.bz\.mgtv\.com\/dynamic\/v1\/channel\/(index|vrsList)\/\w script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_29
 
-http-response ^https?:\/\/dc\.bz\.mgtv\.com\/dynamic\/v1\/channel\/(index|vrsList)\/\w script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_27
+http-response ^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v2\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_30
 
-# 首页信息流,首页菜单,我的页面,底部菜单
-http-response ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.relationrecommend\.wirelessrecommend\.recommend script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_34
+# 我的页面
+http-response ^https:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_32
 
-http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(home|uc)\.query script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_35
+# 播放详情页
+http-response ^https:\/\/mobile\.api\.mgtv\.com\/v10\/video\/info\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_36
 
-http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_36
+# 首页信息流,首页菜单,我的页面,底部菜单,播放详情页
+http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(gateway\.new\.execute|home\.query|uc\.query) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_43
+
+http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_44
 
 # 青少年模式弹窗
-http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2 script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_38
+http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2 script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_46
 
 # 热剧弹窗
-http-response ^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_40
+http-response ^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_48
 
 # 开屏广告
-http-response ^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_42
-
-
-
+http-response ^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, timeout=60 ,tag=cnftp_50
 
 [MITM]
 
-hostname = -i.vip.iqiyi.com, kjp.cupid\.iqiyi\.com, t7z.cupid\.iqiyi\.com, *.cards.iqiyi.com, iface2.iqiyi.com, act.vip.iqiyi.com, search.video.iqiyi.com, comment-card.iqiyi.com,credits.bz.mgtv.com, floor.bz.mgtv.com, img.da.mgtv.com, layer.bz.mgtv.com, me.bz.mgtv.com, me2.bz.mgtv.com, mob.bz.mgtv.com, mobile.api.mgtv.com, mobile.da.mgtv.com, pcvideoaliyun.titan.mgtv.com, playgift.api.mgtv.com, video.da.mgtv.com, vipcdn.mgtv.com, recom.api.mgtv.com, vip.bz.mgtv.com
+hostname = -i.vip.iqiyi.com,*.iqiyi.com,*.mgtv.com,acs.youku.com,push.m.youku.com,un-acs.youku.com
