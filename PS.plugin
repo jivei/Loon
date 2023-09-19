@@ -1,0 +1,8 @@
+#!name=PhotoshopExpress
+#!desc=解锁PhotoshopExpress
+https://raw.githubusercontent.com/jivei/ijivei/main/Photoshop%20Express%20-%20图片编辑%26修图-iOS-512x512.png?token=GHSAT0AAAAAACEUWF4QSE3RMJUMPRXU6KKOZIJ6WQA
+[MITM]
+hostname = %APPEND% lcs-mobile-cops.adobe.io
+
+[Script]
+PhotoshopExpress=type=http-response,pattern=^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile,requires-body=1,script-path=https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/photoshop.js
