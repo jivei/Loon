@@ -1,4 +1,4 @@
-#!name=BiliBili每日等级任务
+#!name=签到 & BiliBili每日等级任务
 #!desc=1.获取cookie①后台退出手机B站客户端的情况下, 重新打开APP进入主页②通过网址「https://www.bilibili.com」登录如通知成功获取cookie, 则可以使用此签到脚本.获取Cookie后, 请将Cookie脚本禁用并移除主机名, 以免产生不必要的MITM.脚本将在每天上午8点30执行, 您可以修改执行时间, 但是注意不要在凌晨执行, 否则部分任务可能无法完成(非脚本问题, 可能与B站服务器有关)2.投币设置，定时任务脚本投币规则为: 随机获取关注列表Up主视频, 默认5视5硬币, 不点赞.用户如需要不投币的版本, 请使用boxjs「https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/boxjs.json」将投币次数置为0, 并保存
 #!homepage=https://github.com/jivei/Loon/tree/
 #!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/BiliBili.png
