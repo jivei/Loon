@@ -2,7 +2,7 @@
 #!desc=启动APP自动获取，建议获取完毕以后关闭该模块以免引起不必要的重写
 #openUrl=https://github.com/jivei/Loon/tree/
 #!homepage=https://github.com/jivei/Loon/tree/
-#!icon=https://raw.githubusercontent.com/jivei/ijivei/main/阿里云盘-iOS-512x512.png?token=GHSAT0AAAAAACEUWF4RJRIM77KQLHNOJF5OZIJ6PUQ
+#!icon=https://raw.githubusercontent.com/jivei/ijivei/main/阿里云盘-iOS-512x512.png
 #!date=2022-07-08 12:57:09
 
 [Script]
