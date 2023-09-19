@@ -1,6 +1,7 @@
-#!name=PhotoshopExpress
+#!name=破解 & PhotoshopExpress
 #!desc=解锁PhotoshopExpress
-https://raw.githubusercontent.com/jivei/ijivei/main/Photoshop%20Express%20-%20图片编辑%26修图-iOS-512x512.png?token=GHSAT0AAAAAACEUWF4QSE3RMJUMPRXU6KKOZIJ6WQA
+#!icon=https://raw.githubusercontent.com/jivei/ijivei/main/Photoshop%20Express%20-%20图片编辑%26修图-iOS-512x512.png?token=GHSAT0AAAAAACEUWF4QSE3RMJUMPRXU6KKOZIJ6WQA
+#!date=2022-07-08 12:57:09
 [MITM]
 hostname = %APPEND% lcs-mobile-cops.adobe.io
 
