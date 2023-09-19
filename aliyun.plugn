@@ -1,0 +1,13 @@
+#!name=签到 & 阿里云盘
+#!desc=配合获取token模块使用（如获取不到，等一段时间再打开），若提示获取cookie成功则可以使用签到
+#openUrl=https://github.com/jivei/Loon/tree/
+#!homepage=https://github.com/jivei/Loon/tree/
+#!icon=https://raw.githubusercontent.com/jivei/ijivei/main/阿里云盘-iOS-512x512.png?token=GHSAT0AAAAAACEUWF4RJRIM77KQLHNOJF5OZIJ6PUQ
+#!date=2022-07-08 12:57:09
+
+
+[Script]
+阿里云盘签到 = type=cron,cronexp="2 0 * * *",wake-system=1,script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js
+[MITM]
+hostname = %APPEND% auth.alipan.com
+
