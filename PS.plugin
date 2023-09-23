@@ -1,9 +1,9 @@
 #!name=破解 & PhotoshopExpress
 #!desc=解锁PhotoshopExpress
-#!icon=https://raw.githubusercontent.com/jivei/ijivei/main/Photoshop Express - 图片编辑&修图-iOS-512x512.png
+#!icon=https://raw.githubusercontent.com/jivei/ijivei/main/Photoshop.png
 #!date=2022-07-08 12:57:09
 [MITM]
 hostname = %APPEND% lcs-mobile-cops.adobe.io
 
 [Script]
-PhotoshopExpress=type=http-response,pattern=^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile,requires-body=1,script-path=https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/photoshop.js
+http-response ^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile script-path=https://raw.githubusercontent.com/litieyin/AD_VIP/main/Script/photoshop.js, requires-body=true, tag=PhotoshopExpress
