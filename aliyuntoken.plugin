@@ -1,14 +1,9 @@
 #!name=签到 & 阿里云盘获取token
 #!desc=启动APP自动获取，建议获取完毕以后关闭该模块以免引起不必要的重写
-#openUrl=https://github.com/jivei/Loon/tree/
-#!homepage=https://github.com/jivei/Loon/tree/
 #!icon=https://raw.githubusercontent.com/jivei/ijivei/main/阿里云盘-iOS-512x512.png
 #!date=2022-07-08 12:57:09
 
 [Script]
-#任选一种删除#即可
-#http-response https:\/\/auth.alipan.com\/v2\/account\/token script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/aliYunPanCheckIn.js, requires-body=true, tag=阿里云盘签到cookie1
-#阿里云盘签到cookie1 = requires-body=1,type=http-response,pattern=https:\/\/auth.alipan.com\/v2\/account\/token,script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/aliYunPanCheckIn.js
 http-response https:\/\/auth.(aliyundrive|alipan).com\/v2\/account\/token script-path=https://raw.githubusercontent.com/lowking/Scripts/master/ali/aliYunPanCheckIn.js, requires-body=true, tag=阿里云盘签到cookie2
 [MITM]
 hostname =  auth.alipan.com
