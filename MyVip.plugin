@@ -27,9 +27,6 @@ URL-REGEX,^https?:\/\/([\w-]+)\.googlevideo\.com\/initplayback(\?.*oad=.+)$,REJE
 
 [Script]
 
-# 百度 纯净搜索 测试更新
-http-request ^https?:\/\/(www|m)\.baidu\.com\/?($|\?(from=\w{8,9}|tn=&from=)) script-path=http://script.hub/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks/baidu.html/_end_/baidu.html?type=mock&target-app=loon-plugin&header=Content-Type%3A%20text%2Fhtml%3B%20charset%3Dutf-8, timeout=60 ,tag=baidu.html_11
-
 # 一甜相机
 http-response ^https?:\/\/m2u-api\.getkwai\.com\/api-server\/api\/v2\/vip\/vipUserInfo script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/1TianCamVipCrack.js, requires-body=true, tag=一甜相机_22
 
