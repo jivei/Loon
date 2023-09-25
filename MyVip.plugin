@@ -1,5 +1,5 @@
 #!name=破解 & 自用常用APP会员
-#!desc=[奈飞评分][微信解除][百度首页][百度文库][百度网盘][彩云天气][简讯订阅][Emby][一甜相机][PhotoShop][B612咔叽][notability][Nicegram][泼辣修图][VSCO][一言][Emby][扫描全能王][Picsart美易][Spotify][傲软全家桶][Wink][美颜相机][美图秀秀][Xmind][驾考宝典][易截图][WPS，WPS稻壳]
+#!desc=[奈飞评分][微信解除][百度首页][百度文库][百度网盘][彩云天气][简讯订阅][Emby][一甜相机][爱企查][B612咔叽][notability][Nicegram][泼辣修图][VSCO][一言][Emby][扫描全能王][Picsart美易][Spotify][傲软全家桶][Wink][美颜相机][美图秀秀][Xmind][驾考宝典][易截图][WPS，WPS稻壳]
 #!homepage=https://github.com/jivei/Loon/tree/main
 #!icon=https://raw.githubusercontent.com/jivei/ijivei/main/VIP.png
 #!date=2022-07-08 12:57:09
@@ -7,8 +7,13 @@
 
 
 
-[Rewrite]
 
+[Map Local]
+#爱企查
+^https:\/\/b2baifanfan\.baidu\.com\/crm\/web\/b2b\/im\/common\/getConfigByDeviceNum reject-200
+
+
+^https:\/\/b2baifanfan\.baidu\.com\/crm\/web\/b2b\/im\/common\/getConfigByDeviceNum data="https://raw.githubuserconte
 # 彩云天气 //biz.cyapi.cn, wrapper.cyapi.cn
 ^https:\/\/api\.caiyunapp\.com\/v1\/activity\? - reject-dict
 ^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\? - reject-dict
@@ -17,7 +22,9 @@
 
 [Script]
 
-# 百度 纯净搜索 测试更新
+#爱企查
+http-response ^https?:\/\/aiqicha\.baidu\.com\/usercenter\/getvipinfoajax script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/Aiinquire/Aiinquire_crack.js, requires-body = true, tag = 爱企查解锁
+#百度 纯净搜索 测试更新
 http-response ^https?:\/\/(www|m)\.baidu\.com\/?($|\?from=\w{8,9}) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/BaiduSearch/BaiduSearchHomePage_remove_ads.js, requires-body = true, tag = 移除百度搜索首页信息流广告
 
 # 一甜相机
@@ -113,4 +120,4 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 
 [MITM]
 
-hostname = lcs-mobile-cops.adobe.io,m2u-api.getkwai.com,*jietu*,api.revenuecat.com,user-kaji-api.b612kaji.com,isi.csan.goodnotes.com,restore-access.indream.app,api.polaxiong.com,api.revenuecat.com,app.yiyan.art,*.camscanner.com,*.intsig.net,api.meiease.cn,spclient.wg.spotify.com,*.aoscdn.com,*.apsapp.cn,api-*.meitu.com,az1mbasecc.bas.cmbchina.com,intellicc.bas.cmbchina.com,*.meiyan.com,*.xiuxiu.meitu.com,api.posters.meitu.com,api-*.meitu.com,www.xmind.*,*.kakamobi.cn,account.wps.cn,*account.wps.com,*.docer.wps.cn,vipapi.wps.cn,ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com,api.m.jd.com,weixin110.qq.com,security.wechat.com,m.baidu.com,www.baidu.com,appwk.baidu.com,pan.baidu.com,api.tipsoon.com,biz.cyapi.cn,wrapper.cyapi.cn,mb3admin.com,license.enpass.io
+hostname = lcs-mobile-cops.adobe.io,aiqicha.baidu.com, b2baifanfan.baidu.com,m2u-api.getkwai.com,*jietu*,api.revenuecat.com,user-kaji-api.b612kaji.com,isi.csan.goodnotes.com,restore-access.indream.app,api.polaxiong.com,api.revenuecat.com,app.yiyan.art,*.camscanner.com,*.intsig.net,api.meiease.cn,spclient.wg.spotify.com,*.aoscdn.com,*.apsapp.cn,api-*.meitu.com,az1mbasecc.bas.cmbchina.com,intellicc.bas.cmbchina.com,*.meiyan.com,*.xiuxiu.meitu.com,api.posters.meitu.com,api-*.meitu.com,www.xmind.*,*.kakamobi.cn,account.wps.cn,*account.wps.com,*.docer.wps.cn,vipapi.wps.cn,ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com,api.m.jd.com,weixin110.qq.com,security.wechat.com,m.baidu.com,www.baidu.com,appwk.baidu.com,pan.baidu.com,api.tipsoon.com,biz.cyapi.cn,wrapper.cyapi.cn,mb3admin.com,license.enpass.io
