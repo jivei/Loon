@@ -91,7 +91,7 @@ http-response ^https?:\/\/.*?account\.wps\.(com|cn)(:\d+)?\/api\/users\/\w+\/ove
 
 http-response ^https?:\/\/account\.wps\.cn\/api\/v3\/mine\/vips script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/WPSDocerVIPuserCrack.js, requires-body=true, tag=WPS稻壳解锁会员
 
-http-request ^https?:\/\/.+\.(docer.)?wps.cn\/(user\/v1\/vip|android\/mb\/buy|download\/v1\/ios|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/WPSDocerVIPuserCrack.jss, tag=WPS稻d壳解锁会员
+http-request ^https?:\/\/.+\.(docer.)?wps.cn\/(user\/v1\/vip|android\/mb\/buy|download\/v1\/ios|partner\/invoke\/usable|(api|rank)\/v1(\/mobile\/mb)?\/detail) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/WPSDocerVIPuserCrack.js, tag=WPS稻d壳解锁会员
 
 # 解锁PhotoshopExpress lcs-mobile-cops.adobe.io
 http-response ^https:\/\/lcs-mobile-cops\.adobe\.io\/mobile_profile script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/photoshop.js, requires-body=true, tag=PhotoshopExpress解锁会员
