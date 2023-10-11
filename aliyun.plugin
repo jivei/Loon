@@ -1,7 +1,8 @@
 #!name=签到 & 阿里云盘
-#!desc=配合获取token模块使用（如获取不到，等一段时间再打开），若提示获取cookie成功则可以使用签到
-#openUrl=https://github.com/jivei/Loon/tree/
-#!homepage=https://github.com/jivei/Loon/tree/
+#!desc=推荐使用https://aliyundrive.pro进行签到
+#!author=点我跳转
+#openUrl=https://aliyundrive.pro
+#!homepage=https://aliyundrive.pro
 #!icon=https://raw.githubusercontent.com/jivei/ijivei/main/阿里云盘-iOS-512x512.png
 #!date=2022-07-08 12:57:09
 
