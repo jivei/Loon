@@ -23,7 +23,17 @@
 ^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\? - reject-dict
 ^https?:\/\/az1mbasecc\.bas\.cmbchina\.com\/Edge\/api\/mlife\.clientface\.clientservice\.api\.advertiseService\/preCacheAdvertiseSec - reject
 ^https?:\/\/intellicc\.bas\.cmbchina\.com\/Edge\/api\/mlife\.intelli\.render\.api\.render\/getDynamicDataSec - reject
-
+#喜马拉雅
+^http[s]?:\/\/openapi\.mysteel\.com/v5/getAdv.htm - reject
+^http[s]?.+ulogs.umeng.com - reject
+^http[s]?.+gslbali.ximalaya.com - reject
+^http[s]?.+adse.ximalaya.com - reject
+^http[s]?.+gslbtx.ximalaya.com - reject
+^http[s]?.+location.ximalaya.com - reject
+^http[s]?.+passport.ximalaya.com - reject
+^http[s]?.+adbehavior.ximalaya.com - reject
+^http[s]?.+ad.ximalaya.com - reject
+^http[s]?.+audid-api.taobao.com - reject
 
 [Script]
 
@@ -125,7 +135,11 @@ http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspam
 # Serverbee
 http-response ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Revenuecat/serverbee.js, requires-body=true, timeout=60 ,tag=serverbee解锁会员
 http-request ^https?:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Revenuecat/serverbee.js, timeout=60 ,tag=serverbee解锁会员
+#喜马拉雅
+http-request ^http[s]?:\/\/((.+ximalaya.+)|(.+xmcdn.+))\/mobile-playpage\/track\/v3\/baseInfo\/ts script-path=https://raw.githubusercontent.com/gjwj666/qx/main/ximalayatk.js, timeout=60 ,tag=喜马拉雅净化会员
+
+http-response ^http[s]?:\/\/((.+ximalaya.+)|(.+xmcdn.+)).*\/(playpage\/tabs\/v2|v1\/album\/track\/ts|v1\/album\/price|v2\/homePage|business-vip-presale-mobile-web\/page\/ts|vip\/v1\/recommand|track\/v3\/baseInfo|v1\/module\/data\/dynamic|basicInfo\/dynamic\/ts).*$ script-path=https://raw.githubusercontent.com/gjwj666/qx/main/ximalayabd.js, requires-body=true, timeout=60 ,tag=喜马拉雅会员净化
 
 [MITM]
 
-hostname = lcs-mobile-cops.adobe.io,api*.faceu.mobi,api3-lq.faceu.mobi,commerce-api-lf.faceu.mobi,commerce-api-lq.faceu.mobi,lv-api-lq.ulikecam.com,lv-api-hl.ulikecam.com,www.google.cn,www.g.cn,ad.12306.cn,minipro.95504.net,ocrifs.ejoy.sinopec.com,aiqicha.baidu.com,b2baifanfan.baidu.com,m2u-api.getkwai.com,*jietu*,api.revenuecat.com,user-kaji-api.b612kaji.com,isi.csan.goodnotes.com,restore-access.indream.app,api.polaxiong.com,api.revenuecat.com,app.yiyan.art,*.camscanner.com,*.intsig.net,api.meiease.cn,spclient.wg.spotify.com,*.aoscdn.com,*.apsapp.cn,api-*.meitu.com,az1mbasecc.bas.cmbchina.com,intellicc.bas.cmbchina.com,*.meiyan.com,*.xiuxiu.meitu.com,api.posters.meitu.com,api-*.meitu.com,www.xmind.*,*.kakamobi.cn,account.wps.cn,*account.wps.com,*.docer.wps.cn,vipapi.wps.cn,ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com,api.m.jd.com,weixin110.qq.com,security.wechat.com,m.baidu.com,www.baidu.com,appwk.baidu.com,pan.baidu.com,biz.cyapi.cn,wrapper.cyapi.cn,mb3admin.com,license.enpass.io
+hostname = 180.153.*.*,*xima*,*xmcdn*,*.ximalaya.com,*.xmcdn.com,180.153.255.*,180.153.140.*,180.153.250.*,114.80.99.*,114.80.139.237,114.80.161.29,1.62.62.64,51*.com*.ximalaya.com,lcs-mobile-cops.adobe.io,api*.faceu.mobi,api3-lq.faceu.mobi,commerce-api-lf.faceu.mobi,commerce-api-lq.faceu.mobi,lv-api-lq.ulikecam.com,lv-api-hl.ulikecam.com,www.google.cn,www.g.cn,ad.12306.cn,minipro.95504.net,ocrifs.ejoy.sinopec.com,aiqicha.baidu.com,b2baifanfan.baidu.com,m2u-api.getkwai.com,*jietu*,api.revenuecat.com,user-kaji-api.b612kaji.com,isi.csan.goodnotes.com,restore-access.indream.app,api.polaxiong.com,api.revenuecat.com,app.yiyan.art,*.camscanner.com,*.intsig.net,api.meiease.cn,spclient.wg.spotify.com,*.aoscdn.com,*.apsapp.cn,api-*.meitu.com,az1mbasecc.bas.cmbchina.com,intellicc.bas.cmbchina.com,*.meiyan.com,*.xiuxiu.meitu.com,api.posters.meitu.com,api-*.meitu.com,www.xmind.*,*.kakamobi.cn,account.wps.cn,*account.wps.com,*.docer.wps.cn,vipapi.wps.cn,ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com,api.m.jd.com,weixin110.qq.com,security.wechat.com,m.baidu.com,www.baidu.com,appwk.baidu.com,pan.baidu.com,biz.cyapi.cn,wrapper.cyapi.cn,mb3admin.com,license.enpass.io
