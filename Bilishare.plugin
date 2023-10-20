@@ -1,0 +1,17 @@
+#!name = 你所热爱的，就是你的生活
+#!desc = 陈睿，你 🐎什么时候死啊？
+#!openUrl = https://gitlab.com/isous/loonresource/-/blob/main/Document/Bilibili/README.md
+#!author = 蒙古上单
+#!homepage = https://bilibli.com
+#!icon = https://gitlab.com/isous/loonresource/-/raw/main/Icon/Bilibili.png
+#!date = 2023-10-10 00:49:11
+#!input = buvid
+#!input = Authorization
+#!input = User-Agent
+
+[Script]
+http-request ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite(\?.+)?$ script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/Bilibili/Bilibili_shared_membership.js, tag = iPhone端共享会员
+http-request ^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.pgc\.gateway\.player\.v2\.PlayURL\/PlayView$ script-path = https://gitlab.com/isous/loonresource/-/raw/main/Script/Bilibili/Bilibili_shared_membership.js, tag = iPad端共享会员
+  
+[Mitm]
+hostname = grpc.biliapi.net, app.bilibili.com, 124.239.240.*, 101.89.57.66, 218.94.210.66, 240e:b1:9801:206:11:0:0:*
