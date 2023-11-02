@@ -1,14 +1,12 @@
-#!name= “音乐的力量”
-#!desc=你他妈的力量全部用来投放广告？
+#!name= 喜马拉雅
+#!desc=洗
 #!icon=https://gitlab.com/lodepuly/iconlibrary/-/raw/master/App_icon/120px/NeteaseCloudMusic.png
 
 [Script]
 
 
 
-# 网易云解锁VIP
-http-request ^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ script-path=https://www.dropbox.com/scl/fi/ffudtmvj6tn4zxixfmqiz/w.js?rlkey=et00u2u5acrjfj6c24q97thir&dl=1?type=qx-script&target=surge-script, tag=网易云解锁VIP
-
+http-request ^https?:\/\/.*\.xima.*\.com\/(mobile-playpage/track/v3/baseInfo|mobile/v1/album/track|mobile/v1/album/detail|mobile-album/album/page|mobile/album/paid/info|mobile-playpage/playpage/tabs|product/detail/v1/basicInfo/dynamic) script-path=https://www.dropbox.com/scl/fi/kfahbozpggiy53uy5hexf/ximalaya.js?rlkey=36gk7tt8ludmvr0wt27uj039c&dl=1, tag=喜马拉雅会员_3
 [MITM]
 
-hostname = *.music.163.com
+hostname = *.xima.*.com, *.xima.com
