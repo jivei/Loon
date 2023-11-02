@@ -4,4 +4,11 @@
 
 [Script]
 
-http-request ^https?:\/\/.+music\.163\.com\/.*(player\/url|entrance|\/eapi\/search\/) script-path=https://www.dropbox.com/scl/fi/ffudtmvj6tn4zxixfmqiz/w.js?rlkey=et00u2u5acrjfj6c24q97thir&dl=1, tag=解锁黑椒音乐_3
+
+
+# 网易云解锁VIP
+http-request ^http[s]?:\/\/.+music.+(player\/url|playlist|entrance|\/eapi\/search\/).*$ script-path=https://www.dropbox.com/scl/fi/ffudtmvj6tn4zxixfmqiz/w.js?rlkey=et00u2u5acrjfj6c24q97thir&dl=1?type=qx-script&target=surge-script, tag=网易云解锁VIP
+
+[MITM]
+
+hostname = *.music.163.com
