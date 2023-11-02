@@ -1,0 +1,7 @@
+#!name= “音乐的力量”
+#!desc=你他妈的力量全部用来投放广告？
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1092.png
+
+[Script]
+
+http-request ^https?:\/\/.+music\.163\.com\/.*(player\/url|entrance|\/eapi\/search\/) script-path=https://www.dropbox.com/scl/fi/ffudtmvj6tn4zxixfmqiz/w.js?rlkey=et00u2u5acrjfj6c24q97thir&dl=1, tag=解锁黑椒音乐_3
