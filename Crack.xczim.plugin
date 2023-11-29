@@ -1,0 +1,11 @@
+#!name=Crack.西窗烛
+#!desc=解锁西窗烛会员
+#!icon=https://raw.githubusercontent.com/jivei/Loon/main/icon/xczim.png
+
+[Script]
+
+http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ddgksf2013/dev/raw/main/XiChuangZhuProCrack.js, requires-body=true, tag=西窗烛会员
+
+[MITM]
+
+hostname = lchttpapi.xczim.com
