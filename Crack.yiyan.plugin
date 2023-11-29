@@ -1,0 +1,11 @@
+#!name=Crack.一言
+#!desc=解锁一言会员
+#!icon=https://raw.githubusercontent.com/jivei/Loon/main/icon/yiyan.png
+
+[Script]
+
+http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ddgksf2013/dev/raw/main/YiYanProCrack.js, requires-body=true, tag=一言会员
+
+[MITM]
+
+hostname = app.yiyan.art

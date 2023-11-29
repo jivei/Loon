@@ -1,0 +1,11 @@
+#!name=Crack.百度文库
+#!desc=解锁百度文库会员
+#!icon=https://raw.githubusercontent.com/jivei/Loon/main/icon/baiduwenku.png
+
+[Script]
+
+http-response ^https:\/\/appwk\.baidu\.com\/naapi\/(user\/getinfo|doc\/getdocdownloadcopywriter) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/BaiduWenku_crack.js, requires-body=true, tag=百度文库会员
+
+[MITM]
+
+hostname = appwk.baidu.com

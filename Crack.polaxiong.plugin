@@ -1,0 +1,11 @@
+#!name=Crack.泼辣修图
+#!desc=解锁泼辣修图会员
+#!icon=https://raw.githubusercontent.com/jivei/Loon/main/icon/polaxiong.png
+
+[Script]
+
+http-response ^https?:\/\/.*\/v1\/payments\/(appleiap\/receipts\/confirmation|profiles\/@me\/subscription) script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/pola.js, requires-body=true, tag=泼辣修图会员
+
+[MITM]
+
+hostname = api.polaxiong.com

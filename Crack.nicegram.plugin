@@ -1,0 +1,13 @@
+#!name=Crack.Nicegram
+#!desc=解锁Nicegram会员
+#!icon=https://raw.githubusercontent.com/jivei/Loon/main/icon/nicegram.png
+
+[Script]
+
+http-response ^https?:\/\/restore-access\.indream\.app\/restoreAccess script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/nicegram.js, requires-body=true, tag=Nicegram员
+
+http-response https://nicegram.cloud/api/v6/user/info script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/Nicegram.js, requires-body=true, tag=Nicegram会员
+
+[MITM]
+
+hostname = restore-access.indream.app,nicegram.cloud

@@ -1,0 +1,11 @@
+#!name=Crack.CAD
+#!desc=解锁CAD看图会员
+#!icon=https://raw.githubusercontent.com/jivei/Loon/main/icon/cad2.png
+
+[Script]
+
+http-response ^https?:\/\/cad\.glodon\.com\/(account|authorize\/query|alipay\/auth) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/cad2.js, requires-body=true, tag=CAD快速看图会员
+
+[MITM]
+
+hostname = cad.glodon.com

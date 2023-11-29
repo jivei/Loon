@@ -1,0 +1,11 @@
+#!name=Crack.RainViewer
+#!desc=解锁RainViewer会员
+#!icon=https://raw.githubusercontent.com/jivei/Loon/main/icon/rainviewer.png
+
+[Script]
+
+http-response ^https?:\/\/d1hzbu30hrhkoe\.cloudfront\.net\/mobile\/verify\/ios script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/RainViewer.js, requires-body=true, tag=RainViewer会员
+
+[MITM]
+
+hostname = d1hzbu30hrhkoe.cloudfront.net

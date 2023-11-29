@@ -1,0 +1,11 @@
+#!name=Crack.傲软系列
+#!desc=解锁傲软系列会员
+#!icon=https://raw.githubusercontent.com/jivei/Loon/main/icon/apsapp.png
+
+[Script]
+
+http-response ^https?:\/\/.*\.(aoscdn\.com|apsapp\.cn) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/arqjt.js, requires-body=true, tag=傲软抠图傲软扫描傲软PDF转换傲软PDF编辑傲软投屏咖映轻闪PDF乃糖小组件佐糖照片会员
+
+[MITM]
+
+hostname = *.aoscdn.com,*.apsapp.cn
