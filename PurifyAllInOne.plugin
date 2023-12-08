@@ -1171,371 +1171,193 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject-
 ^https:\/\/portal\.zjzwfw\.gov\.cn\/app_api\/appHome\/selectStartPic - reject-200
 # 住这儿 
 ^https?:\/\/z\.onewo\.com\/passer\/api\/ads\/v1\/8\/list - reject-200
-[Script]
 
+
+[Script]
 # --------- 爱奇艺净化 --------- 
 http-response ^http:\/\/[\d\.]+\/3f1\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=首页信息流广告
-
 http-response ^http:\/\/access\.if\.iqiyi\.com\/3f1\/cards\.iqiyi\.com\/(views_category\/3\.0\/category_home|views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=首页信息流广告
-
 http-response ^https:\/\/cards\.iqiyi\.com\/views_category\/3\.0\/(category_home|categorylib_content|film_hybrid)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=首页信息流广告
-
 http-response ^https:\/\/cards\.iqiyi\.com\/(views_home\/3\.0\/qy_home|waterfall\/3\.0\/feed)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=首页信息流广告
-
 http-response ^https:\/\/cards\.iqiyi\.com\/views_plt\/3\.0\/player_tabs_v2\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=播放详情页
-
 http-response ^https:\/\/cards\.iqiyi\.com\/views_search\/3\.0\/(hot_query_)?search\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=搜索页列表
-
 http-response ^https:\/\/comment-card\.iqiyi\.com\/views_comment\/3\.0\/long_video_comments\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=评论区
-
 http-response ^https:\/\/iface2\.iqiyi\.com\/aggregate\/3\.0\/getMyMenus\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=我的页面菜单
-
 http-response ^https:\/\/iface2\.iqiyi\.com\/control\/3\.0\/init_proxy\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=首页左上角天气
-
 http-response ^https:\/\/iface2\.iqiyi\.com\/fusion\/3\.0\/common_switch\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=通用控制
-
 http-response ^https:\/\/iface2\.iqiyi\.com\/views\/3\.0\/(bottom_theme|home_top_menu)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=底部顶部tab
-
 http-response ^https:\/\/search\.video\.iqiyi\.com\/q\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=搜索框填充词
-
 http-response ^https?:\/\/(kjp|t7z)\.cupid\.iqiyi\.com\/mixer\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=开屏广告,播放广告
-
 # --------- 优酷视频净化 --------- 
 http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.columbus\.(gateway\.new\.execute|home\.feed|home\.query|uc\.query|ycp\.query) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=首页信息流
-
 http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.haidai\.lantern\.appconfig\.get script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=底部tab
-
 http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.huluwa\.dispatcher\.youthmode\.config2 script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=青少年模式弹窗
-
 http-response ^https:\/\/acs\.youku\.com\/gw\/mtop\.youku\.soku\.yksearch script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=搜索列表
-
 http-response ^https:\/\/push\.m\.youku\.com\/collect-api\/get_push_interval_config_wx\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=热剧弹窗
-
 http-response ^https:\/\/un-acs\.youku\.com\/gw\/mtop\.youku\.play\.ups\.appinfo\.get script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=开屏广告
-
 # --------- 腾讯视频净化 --------- 
 http-request ^https?:\/\/vv\.video\.qq\.com\/getvinfo script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, tag=播放详情页, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 # --------- 芒果视频净化 --------- 
 http-response ^https:\/\/me\.bz\.mgtv\.com\/v3\/module\/list\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=我的页面, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^http:\/\/mob-st\.bz\.mgtv\.com\/odin\/c1\/channel\/index\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=首页信息流, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https?:\/\/dc2?\.bz\.mgtv\.com\/dynamic\/v1\/channel\/(index|vrsList)\/\w script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=顶部tab, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/mobile\.api\.mgtv\.com\/mobile\/config\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=底部tab, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/mobile\.api\.mgtv\.com\/v10\/video\/info\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=播放详情页, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/mobile-thor\.api\.mgtv\.com\/v1\/vod\/info\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=播放详情页, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https?:\/\/mobileso\.bz\.mgtv\.com\/mobile\/recommend\/v2\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cnftp.js, requires-body=true, tag=播放详情页, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 # --------- 0 --------- 
 http-response ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/12306.js, requires-body=true, tag=12306净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}:\d+\/api\/v\d\/movie\/index_recommend script-path=https://github.com/ddgksf2013/Scripts/raw/master/555Ad.js, requires-body=true, tag=555净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 # --------- A ---------
 http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch$ script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, tag=AMDC净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body=true, tag=阿里巴巴净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https?:\/\/(search|list)-app-m\.i4\.cn\/(getHotSearchList|getAppList)\.xhtml script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/aisi.js, requires-body=true, tag=爱思助手净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 # --------- B --------- 
 http-response ^http:\/\/api\.babytree\.com\/bafconfigcenter_intf\/config\/get\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/babytree.js, requires-body=true, tag=宝宝树净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^http:\/\/go\.babytree\.com\/go_pregnancy\/api\/(app_index\/get_app_tab|cms_column\/get_column_list|feeds\/get_index_feeds_list|user\/get_user_info)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/babytree.js, requires-body=true, tag=宝宝树底部tab首页顶部tab信息流我的页面, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/biliProtoA.js, requires-body=true, binary-body-mode=true, tag=B站移除播放页面视频列表广告, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/biliProtoA.js, requires-body=true, binary-body-mode=true, tag=B站移除搜索结果广告, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(view|viewunite)\.v1\.View\/(View|ViewProgress) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/biliProtoA.js, requires-body=true, binary-body-mode=true, tag=B站移除评论区广告, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/biliProtoA.js, requires-body=true, binary-body-mode=true, tag=B站移除动态页面广告, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/biliProtoA.js, requires-body=true, binary-body-mode=true, tag=B站移除交互式弹幕, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.polymer\.app\.search\.v1\.Search\/SearchAll script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/biliProtoA.js, requires-body=true, binary-body-mode=true, tag=B站移除青少年弹窗, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/(feed\/index(\/story)?|search\/square)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/bili.js, requires-body=true, tag=B站移除首页推荐广告, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/(top\/activity|show\/tab\/v2)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/bili.js, requires-body=true, tag=B站精简首页顶部标签, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/api\.bilibili\.com\/pgc\/page\/(bangumi|cinema\/tab\?) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/bili.js, requires-body=true, tag=B站移除观影页广告, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/api\.live\.bilibili\.com\/xlive\/app-room\/v1\/index\/getInfoByRoom\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/bili.js, requires-body=true, tag=B站移除直播间广告, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/(brand\/list|event\/list2|list|show)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/bili.js, requires-body=true, tag=B站移除开屏广告, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/bili.js, requires-body=true, tag=B站精简我的页面, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/skin\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/bili.js, requires-body=true, tag=B站移除皮肤推送, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/BaiDuCloudProCrack.js, requires-body=true, tag=百度网盘倍速, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/pan\.baidu\.com\/api\/getsyscfg\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduCloud.js, requires-body=true, tag=百度网盘首页净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/pan\.baidu\.com\/rest\/2\.0\/membership\/user script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/baiduCloud.js, requires-body=true, tag=百度网盘杂项净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https?:\/\/mime\.baidu\.com\/(imrobot\/v1\/pub\/relation\/get_robot_list|v5\/custom_page\/(layout|getdata)) script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js, requires-body=true, tag=百度输入法净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/newclient\.map\.baidu\.com\/client\/imap\/dl\/s\/UpdateInfo\.php\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/map.js, requires-body=true, tag=百度地图净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/newclient\.map\.baidu\.com\/client\/usersystem\/mine\/page\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/map.js, requires-body=true, tag=百度地图我的页面净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 # --------- C --------- 
 http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js, requires-body=true, tag=菜鸟净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/gateway\.caixin\.com\/api\/app-api\/caixinapp\/appinfo script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caixin.js, requires-body=true, tag=财新移除文章底部广告, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/gg\.caixin\.com\/s\?z=caixin&op=1 script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caixin.js, requires-body=true, tag=财新移除开屏广告和文章顶部横幅, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/mappsv5\.caixin\.com\/(channelv5\/list|index_page_v5) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/break/caixin.js, requires-body=true, tag=财新移除文章中间推广, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 # --------- G --------- 
 http-response ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, requires-body=true, tag=高德地图搜索详情页净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/routePlan\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图导航详情页净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/(common\/coupon\/info|poi\/detail)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图路线规划净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(homepage|mps|search\/sp|sug|tips_operation_location)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图地点详情页净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(card-service-plan-home|main-page)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图首页净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图推广卡片净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图我的页面净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图附近页净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图开屏净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(\/home)?\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图打车页红点角标弹窗净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/amap.js, requires-body=true, tag=高德地图天气图标推广卡片净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
 
 # --------- H ---------
 http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/Umetrip_remove_ads.js, tag=航旅纵横净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 # --------- M --------- 
 http-response https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/myTab script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/mijia.js, requires-body=true, tag=米家净化, argument="%26sppreviewtype%3D%5Cd(.*)%26spsrt%3D%5Cd->%26sppreviewtype%3D0%241%26spsrt%3D0"
-
 http-response ^https?:\/\/apapia-sqk\.manmanbuy\.com\/index_json\.ashx script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, tag=慢慢买净化, argument="splashAD->ddgksf2013"
-
 http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body=true, tag=来自RuCu6, argument="splashAD->ddgksf2013"
-
 http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body=true, tag=净化合集, argument="splashAD->ddgksf2013"
-
 http-response ^https:\/\/api\.m\.mi\.com\/v1\/(app\/start|order\/expressView) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body=true, tag=净化合集, argument="splashAD->ddgksf2013"
-
 # --------- N --------- 
 http-request ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, tag=奈飞评分1, argument="splashAD->ddgksf2013"
-
 http-response ^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, requires-body=true, tag=奈飞评分2, argument="splashAD->ddgksf2013"
-
 # --------- J --------- 
 http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/jingdong.js, requires-body=true, tag=京东净化, argument="splashAD->ddgksf2013"
-
 http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=lite_advertising script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, tag=京东极速版净化, argument="jdLiteAdvertisingVO->rucu6"
 
 http-response ^https?://api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path=https://raw.githubusercontent.com/Keywos/Rule/main/JS/Jdbj.js, requires-body=true, tag=京东比价, argument="jdLiteAdvertisingVO->rucu6"
-
 # --------- K --------- 
 http-response ^https:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body=true, tag=酷安净化1, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body=true, tag=酷安净化2, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https:\/\/api\.coolapk\.com\/v6\/page\/dataList\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/coolapk.js, requires-body=true, tag=酷安净化3, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response https:\/\/api\.gotokeep\.com\/athena\/v\d\/people\/my script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/my.js, requires-body=true, tag=Keep-My净化, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response https:\/\/api\.gotokeep\.com\/config\/v3/basic script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/basic.js, requires-body=true, tag=Keep-Basic净化, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response https:\/\/kad\.gotokeep\.com\/op-engine-webapp\/v1\/ad script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/kad.js, requires-body=true, tag=Keep-Ad净化, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/api\.gotokeep\.com\/athena\/v7\/people\/course\/(practiced|general) script-path=https://raw.githubusercontent.com/Maasea/surgeModule/master/Script/Keep/course.js, requires-body=true, tag=Keep-Course净化, argument="jdLiteAdvertisingVO->rucu6"
 
 # --------- I --------- 
 http-response ^https:\/\/napi\.ithome\.com\/api\/(news\/index|topmenu\/getfeeds) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/ithome.js, requires-body=true, tag=IT之家净化, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https:\/\/magev6\.if\.qidian\.com\/argus\/api\/v3\/user\/getaccountpage script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/Qidian_my.js, requires-body=true, tag=起点我的界面, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/.*\.pipix\.com\/bds\/(feed\/stream|comment\/cell_reply|cell\/cell_comment|cell\/detail|ward\/list|user\/favorite|user\/cell_coment|user\/cell_userfeed|user\/publish_list) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/pipixia.adblock.js, requires-body=true, tag=皮皮虾水印, argument="jdLiteAdvertisingVO->rucu6"
-
 # --------- S ---------
 http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10 script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js, requires-body=true, tag=什么值得买_搜索结果去广告, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js, requires-body=true, tag=什么值得买_搜索标签去广告, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/app-api\.smzdm\.com\/util\/loading script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js, requires-body=true, tag=什么值得买_开屏去广告, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/homepage-api\.smzdm\.com\/v3\/home script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js, requires-body=true, tag=什么值得买_首页去广告, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/haojia-api\.smzdm\.com\/home\/list script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js, requires-body=true, tag=什么值得买_好价去广告, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js, requires-body=true, tag=什么值得买_好价详情页去广告, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js, requires-body=true, tag=什么值得买_百科去广告, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/s-api\.smzdm\.com\/sou\/(list_v10|filter\/tags\/hot_tags) script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js, requires-body=true, tag=什么值得买_搜索去广告, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js, requires-body=true, tag=什么值得买_值会员权益中心banner去广告, argument="jdLiteAdvertisingVO->rucu6"
-
 # --------- T --------- 
 http-response ^http:\/\/c\.tieba\.baidu\.com\/c\/f\/(excellent\/personalized|frs\/(generalTabList|page|threadlist)|pb\/(pic)?page)$ script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/tiebaJson.js, requires-body=true, tag=贴吧净化1, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^http:\/\/c\.tieba\.baidu\.com\/c\/f\/(excellent\/personalized|frs\/(generalTabList|page|threadlist)|pb\/(pic)?page)\?cmd script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/tiebaProto.js, requires-body=true, tag=贴吧净化2, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^http:\/\/c\.tieba\.baidu\.com\/c\/s\/sync$ script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/tiebaJson.js, requires-body=true, tag=贴吧净化3, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^https:\/\/tiebac\.baidu\.com\/tiebaads\/commonbatch\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/tiebaJson.js, requires-body=true, tag=贴吧净化4, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?) script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js, requires-body=true, tag=贴吧净化5, argument="jdLiteAdvertisingVO->rucu6"
-
 http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js, requires-body=true, binary-body-mode=true, tag=贴吧净化6, argument="jdLiteAdvertisingVO->rucu6"
-
 http-request ^https?:\/\/vv\.video\.qq\.com\/getvinfo script-path=https://raw.githubusercontent.com/mieqq/mieqq/master/replace-body.js, requires-body=true, tag=腾讯视频净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body=true, tag=淘宝开净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body=true, tag=淘宝屏净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 # --------- V --------- 
 http-response ^https\:\/\/(weixin110\.qq|security\.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/wechat/wechat110.js, requires-body=true, tag=微信跳过微信中转页面,解除被封禁链接, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 # --------- X --------- 
 http-response ^https:\/\/api\.m\.mi\.com\/v1\/(app\/start|order\/expressView|product\/productView) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body=true, tag=小米商城净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/widgets script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化1, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/redtube\? script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化2, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/videofeed\? script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化3, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/note\/feed\? script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化4, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/splash_config script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化5, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\? script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化6, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/system_service\/config\? script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化7, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hot_list script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化8, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/hint script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化9, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/homefeed\/categories script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化10, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/edith\.xiaohongshu\.com\/api\/sns\/v\d\/search\/trending script-path=https://github.com/ddgksf2013/Scripts/raw/master/redbook_json.js, requires-body=true, tag=小红书净化11, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/.*\.xima.*\.com\/discovery-category\/customCategories script-path=https://github.com/ddgksf2013/Scripts/raw/master/ximalaya_json.js, requires-body=true, tag=喜马拉雅首页直播净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/.*\.xima.*\.com\/focus-mobile\/focusPic script-path=https://github.com/ddgksf2013/Scripts/raw/master/ximalaya_json.js, requires-body=true, tag=喜马拉雅首页横幅净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/.*\.xima.*\.com\/discovery-feed\/v\d\/mix script-path=https://github.com/ddgksf2013/Scripts/raw/master/ximalaya_json.js, requires-body=true, tag=喜马拉雅首页动态净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/.*\.xima.*\.com\/discovery-category\/v\d/category script-path=https://github.com/ddgksf2013/Scripts/raw/master/ximalaya_json.js, requires-body=true, tag=喜马拉雅Tab页滚动净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https?:\/\/.*\.xima.*\.com\/mobile-user\/v\d\/homePage script-path=https://github.com/ddgksf2013/Scripts/raw/master/ximalaya_json.js, requires-body=true, tag=喜马拉雅我的页面净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 # --------- W --------- 
 http-response https:\/\/i\.weread\.qq\.com\/(book\/(reading[sS]tat|chapterReview)|user\/profile|groups\/readerEntrance|review\/list|mobileSync) script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/WeRead/weread.js, requires-body=true, tag=微信阅读净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/(checkin\/show|client\/publisher_list|push\/active)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博签到, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/groups\/allgroups\/v2\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博首页, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/(cardlist|page)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博详情页, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/comments\/build_comments\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博超话, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/(container\/asyn|flowlist)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博评论区, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/friendships\/destroy\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博看图界面, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/profile\/(container_timeline|dealatt|me|statuses\/tab|userinfo)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博个人主页, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(container_timeline(_hot|_topic|_topicpage|_unread)?|unread_hot_timeline)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博我的页面, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/statuses\/(extend|show)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博信息流, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/video\/tiny_stream_video_list\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博商品橱窗, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/!\/huati\/discovery_home_bottom_channels\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博视频流, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/direct_messages\/user_list\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博视频号, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/messageflow\/notice\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博视频调查, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/search\/(container_timeline|finder)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博话题卡片, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.weibo\.cn\/2\/searchall\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博侧边栏, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/bootpreload\.uve\.weibo\.com\/v1\/ad\/preload script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博顶部直播, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博侧边栏提醒, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/wbapp\.uve\.weibo\.com\/(preload\/get_ad|wbapplua\/wbpullad\.lua)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博右上角红包, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/new\.vip\.weibo\.cn\/aj\/appicon\/list\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/weibo.js, requires-body=true, tag=微博会员图标, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-request ^https:\/\/weibo\.cn\/sinaurl\?(.*&)?(u|toasturl|goto)= script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, tag=微博重定向, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-request ^https:\/\/shop\.sc\.weibo\.com\/h5\/jump\/error\?(.*&)?url= script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, tag=微博直接访问, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/(sinaurl|t)\.cn\/ script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/noRedirect.js, tag=微博跳过, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 # --------- Y --------- 
 http-response ^https?:\/\/.*jietu.*com/apiv\d/user script-path=https://github.com/ddgksf2013/MoYu/raw/master/YiJieTu2ProCrack.js, requires-body=true, tag=易截图去水印, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 # --------- Z --------- 
 http-response ^https:\/\/api\.zhihu\.com\/commercial_api\/app_float_layer script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, requires-body=true, tag=知乎首页悬浮图标顶部横幅开屏广告净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, requires-body=true, tag=知乎关注页推荐推荐信息流热榜信息流净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.zhihu\.com\/(moments_v3|topstory\/hot-lists\/total|topstory\/recommend) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, requires-body=true, tag=知乎热榜直播回答底部卡片净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, requires-body=true, tag=知乎回答详情页净化, argument = "&sppreviewtype=\d(.*)&spsrt=\d->&sppreviewtype=0$1&spsrt=0"
-
 http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-body.js, requires-body=true, tag=知乎评论区顶部净化, argument="%22recommend_queries%22%3A%5C%7B.%2B%5C%7D->%22recommend_queries%22%3A%7B%7D"
-
 http-response ^https:\/\/api\.zhihu\.com\/next-(bff|data|render)\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, requires-body=true, tag=知乎下一个回答净化, argument="%22recommend_queries%22%3A%5C%7B.%2B%5C%7D->%22recommend_queries%22%3A%7B%7D"
-
 http-response ^https:\/\/api\.zhihu\.com\/questions\/\d+(\/answers|\/feeds|\?include=) script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, requires-body=true, tag=知乎其他净化, argument="%22recommend_queries%22%3A%5C%7B.%2B%5C%7D->%22recommend_queries%22%3A%7B%7D"
-
 http-response ^https:\/\/www\.zhihu\.com\/api\/v4\/(articles|answers)\/\d+\/recommendations?\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, requires-body=true, tag=知乎服务器推送配置净化, argument="%22recommend_queries%22%3A%5C%7B.%2B%5C%7D->%22recommend_queries%22%3A%7B%7D"
-
 http-response ^https:\/\/appcloud2\.zhihu\.com\/v3\/config script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, requires-body=true, tag=知乎首页配置净化, argument="%22recommend_queries%22%3A%5C%7B.%2B%5C%7D->%22recommend_queries%22%3A%7B%7D"
-
 http-response ^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\? script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/zhihu.js, requires-body=true, tag=知乎净化, argument="%22recommend_queries%22%3A%5C%7B.%2B%5C%7D->%22recommend_queries%22%3A%7B%7D"
 
-# 百度纯净搜索
-http-request ^https?:\/\/(www|m)\.baidu\.com\/?($|\?(from=\w{8,9}|tn=&from=)) script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks/baidu.html/_end_/baidu.html?type=mock&target-app=loon-plugin&header=Content-Type%3A%20text%2Fhtml%3B%20charset%3Dutf-8, timeout=60 ,tag=baidu.html
-
-http-request ^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist) script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks/mime.json/_end_/mime.json?type=mock&target-app=loon-plugin, timeout=60 ,tag=mime.json
-
-http-request ^https?:\/\/mime\.baidu\.com\/sapi\/v1\/(circle\/joinedlist|lccorpus\/usercorpussync|aihelpactivity\/aihelpresource) script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks/mime.json/_end_/mime.json?type=mock&target-app=loon-plugin, timeout=60 ,tag=mime.json
-
-http-request ^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks/mime.json/_end_/mime.json?type=mock&target-app=loon-plugin, timeout=60 ,tag=mime.json
-
-http-request ^https?:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?appname=baidu_input script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks/bd.json/_end_/bd.json?type=mock&target-app=loon-plugin, timeout=60 ,tag=bd.json
-
-http-request ^https:\/\/mime\.baidu\.com\/v5\/(fb\/st\?logtype|(notiv3|cellloc_noti|noti_cloudswitch_noti)\/info) script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks/mime.json/_end_/mime.json?type=mock&target-app=loon-plugin, timeout=60 ,tag=mime.json
-
-http-request ^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\? script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Mocks/caiyun.json/_end_/caiyun.json?type=mock&target-app=loon-plugin, timeout=60 ,tag=caiyun.json
-
-http-request ^https:\/\/wrapper\.cyapi\.cn\/v1\/activity\? script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/RuCu6/QuanX/main/Mocks/caiyun.json/_end_/caiyun.json?type=mock&target-app=loon-plugin, timeout=60 ,tag=caiyun.json
-
-http-request ^https:\/\/sctel10000\.cn\/config\/myZoneConfig\/getMyHomeMenus script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/axcsz/Collect/master/Script/sichuandianxinshouye.json/_end_/sichuandianxinshouye.json?type=mock&target-app=loon-plugin, timeout=60 ,tag=sichuandianxinshouye.json
-
-http-request ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/Keywos/rule/main/mocks//WeChat.json/_end_/WeChat.json?type=mock&target-app=loon-plugin, timeout=60 ,tag=WeChat.json
-
-http-request ^https?:\/\/sp\.kaola\.com\/api\/openad script-path=http://192.168.99.2:9101/convert/_start_/https://raw.githubusercontent.com/mieqq/mieqq/master/reject-200./_end_/reject-200.?type=mock&target-app=loon-plugin, timeout=60 ,tag=reject-200.
-
 [MITM]
-
 hostname = app-api.smzdm.com,homepage-api.smzdm.com,haojia-api.smzdm.com,haojia.m.smzdm.com,baike-api.smzdm.com,s-api.smzdm.com,zhiyou.m.smzdm.com,i.weread.qq.com,m.ctrip.com,*.abchina.com.cn,t.cnweibo.cn,xmc.ximalaya.com,*.pipix.com,*.babytree.com,api.getdailyart.com,search.bilibili.com,www.bilibili.com,pages.xiaohongshu.com,referee.xiaohongshu.com,boot.biz.weibo.com,mapi.weibo.*,*.api.weibo.*,api.weibo.*,*.x-storm.com,member.alipan.com,zixun.imtt.qq.com,novel.html5.qq.com,kde.qq.com,atoken.m.taobao.com,img.ithome.com,shop.sc.weibo.com,xyks.yuanfudao.com,ad.21cn.com,*-release.wuta-cam.com,*.163jiasu.com,*.58cdn.com.cn,*.ahhhhfs.com,*.ajkimg.com,*.app.10086.cn,*.app.coc.10086.cn,*.chelaile.net.cn,*.go189.cn,*.googlevideo.com,*.hoopchina.com,*.httpdns.pro,*.iqiyi.com,*.k.sohu.com,*.laichon.com,*.mgtv.com,*.pangolin-sdk-toutiao,*.pangolin-sdk-toutiao.*,*.peopleapp.com,*.pglstatp-toutiao.com,*.pglstatp-toutiao.com.*,*.pstatp.com,*.pstatp.com.*,*.script.hub,*.snailsleep.net,*.tipatipa.xyz,*.weibo.cn,*.weibo.com,*.xiaojukeji.com,*.xima*.*,*.xmcdn.*,*.yuxueyuan.cn,*.zhihu.com,*cupid.iqiyi.com,*default.ixigua.com,*gaoqingdianshi.com,*jietu*,*mangaapi.manhuaren.*,*xima*,*xmcdn*,1.62.62.64,103.91.210.141,112.13.119.52,114.80.139.237,114.80.161.29,114.80.99.*,116.85.2.*,116.85.2.14,116.85.2.15,117.147.199.59,118.178.214.118,119.29.29.98,119.29.29.99,123.207.209.*,139.199.240.*,180.153.*.*,180.153.140.*,180.153.250.*,180.153.255.*,1jietu.com,3g.csair.com,47.100.65.202,4gimg.map.qq.com,51*.com*.ximalaya.com,59.111.*,a.qiumibao.com,access.mypikpak.com,acs.m.taobao.com,acs.youku.com,ad.12306.cn,ad.maoyan.com,adapi.izuiyou.com,adm.10jqka.com.cn,adpai.thepaper.cn,adproxy.autohome.com,adproxy.autohome.com.cn,adx-cn.anythinktech.com,afd.baidu.com,amdc-sibling.alipay.com.cn,amdc.alipay.com,ap.dongqiudi.com,apapia-sqk.manmanbuy.com,api-access.pangolin-sdk-toutiao-b.com,api-access.pangolin-sdk-toutiao1.com,api-ad-product.huxiu.com,api-cfg.wtzw.com,api-mifit.huami.com,api-new.app.acfun.cn,api-sams.walmartmobile.cn,api-shoulei-ssl.xunlei.com,api.00bang.cn,api.21ec74.com,api.ahmobile.cn,api.biliapi.net,api.bilibili.com,api.bwton.com,api.caijingmobile.com,api.caiyunapp.com,api.chelaile.net.cn,api.cloud.189.cn,api.coolapk.com,api.dangdang.com,api.douban.com,api.gameplus.qq.com,api.gamer.com.tw,api.gotokeep.com,api.haohaozhu.cn,api.internetofcity.cn,api.izuiyou.com,api.jr.mi.com,api.jxedt.com,api.kkmh.com,api.kmovie.gifshow.com,api.live.bilibili.com,api.m.jd.com,api.m.mi.com,api.maoyan.com,api.mcd.cn,api.mwee.cn,api.ncarzone.com,api.pinduoduo.com,api.psy-1.com,api.qbb6.com,api.revenuecat.com,api.rr.tv,api.sfacg.com,api.shenyin.name,api.taou.com,api.tipsoon.com,api.touker.com,api.vc.bilibili.com,api.vistopia.com.cn,api.weibo.cn,api.wfdata.club,api.wmpvp.com,api.xiachufang.com,api.xiaoyi.com,api.xueqiu.com,api.yangkeduo.com,api.yikaobang.com.cn,api.yonghuivip.com,api.zhihu.com,api.zuihuimai.com,api1.34580.com,api3.cls.cn,apis.lifeweek.com.cn,apiwz.midukanshu.com,app-gw.csdn.net,app.10086.cn,app.10099.com.cn,app.58.com,app.ap.d3yuiw4.com,app.api.versa-ai.com,app.biliapi.net,app.bilibili.com,app.dewu.com,app.hbooker.com,app.homeinns.com,app.missevan.com,app.yinxiang.com,app.zhuanzhuan.com,app2.autoimg.cn,app3.qdaily.com,appactive.1234567.com.cn,appapi.huazhu.com,appconf.mail.163.com,apphw.ddpai.com,apps.api.ke.com,az*mbasecc.bas.cmbchina.com,b.appsimg.com,b2baifanfan.baidu.com,bbs-api.miyoushe.com,bdsp-x.jd.com,beta-api.crunchyroll.com,bgw.xinyue.qq.com,biz.cyapi.cn,boxjs.com,boxjs.net,business.msstatic.com,capi.lkcoffee.com,ccmsupport-sz.tenpay.com,ccsp-egmas.sf-express.com,cdn-evone-ceph.echargenet.com,cdn.*.chelaileapp.cn,cdn.cmgadx.com,cdn.poizon.com,cdn.shouji.sogou.com,client-api.oray.com,client.app.coc.10086.cn,client.mail.163.com,client.qunar.com,client.tujia.com,clientaccess.10086.cn,cloud.189.cn,cn-acs.m.cainiao.com,common.diditaxi.com.cn,conf.diditaxi.com.cn,creditcardapp.bankcomm.cn,creditcardapp.bankcomm.com,daoyu.sdo.com,dapis.mting.info,dat.ruanmei.com,data-collector.soulapp.cn,dili.bdatu.com,discardrp.umetrip.com,dispatcher.camera360.com,djcapp.game.qq.com,dl-cu-hz.lechange.cn,dns.jd.com,dq.dxy.cn,dsp-x.jd.com,e.dangdang.com,easyreadfs.nosdn.127.net,ecapi.lkcoffee.com,ecard.shenzhentong.com,edit.sinaapp.com,edith.xiaohongshu.com,ehome.esgcc.com.cn,elemecdn.com,elife.icbc.com.cn,emdcadvertise.eastmoney.com,emdcadvise.eastmoney.com,evs.500.com,explorer.tratao.com,fbchina.flipchina.cn,flowplus.meituan.net,fmapp.chinafamilymart.com.cn,ftapi.10jqka.com.cn,fuss10.elemecdn.com,gab.122.gov.cn,gateway-api.dushu365.com,gateway.36kr.com,gateway.abite.com,gateway.shouqiev.com,gd.10086.cn,gg.caixin.com,gha.ghac.cn,goblin.hupu.com,god.gameyw.netease.com,gongdu.youshu.cc,grpc.biliapi.net,guanyu.longfor.com,guard.sec.xiaojukeji.com,guide-acs.m.taobao.com,gurd.snssdk.com,gurd.snssdk.com.*,gw.aihuishou.com,gw.alicdn.com,gw.kaola.com,gx.10086.cn,h2tcbox.baidu.com,heic.alicdn.com,helper.2bulu.com,home.api.m.mi.com,home.mi.com,home.umetrip.com,homefront.qunar.com,httpdns.n.netease.com,i.weread.qq.com,i.ys7.com,igetcool-gateway.igetcool.com,ih2.ireader.com,image.spdbccc.com.cn,images.client.vip.xunlei.com,imeres.baidu.com,img.jiemian.com,img.meituan.net,img.rr.tv,impservice.dictapp.youdao.com,intellicc.bas.cmbchina.com,interface*.music.163.com,interface*.music.163.com:0,ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com,ios.sspai.com,iphone.ac.qq.com,ipv4.music.163.com,isi.csan.goodnotes.com,j1.pupuapi.com,jad-api.jin10.com,jdread-api.jd.com,js-ad.ayximgs.com,kad.gotokeep.com,lban.spdb.com.cn,lcen.xiaote.net,learn.chaoxing.com,lf-cdn-tos.bytescm.com,license.enpass.io,limbopro.com,list-app-m.i4.cn,m.360buyimg.com,m.baidu.com,m.client.10010.com,m.ibuscloud.com,m.lkcoffee.com,m.msyc.cc,m.qianbao.qq.com,m.sd.10086.cn,m.tuniu.com,m.you.163.com,m5-zb.amap.com,m5.amap.com,ma-adx.ctrip.com,mage*.if.qidian.com,mage.if.qidian.com,magev6.if.qidian.com,maicai.api.ddxq.mobi,manga.bilibili.com,mapi.appvipshop.com,mapi.dangdang.com,mapi.mafengwo.cn,mapi.sfbest.com,mapi.sichuanair.com,mapi.weibo.com,mbd.baidu.com,mcmm.caiyun.feixin.10086.cn,mea.meitudata.com,mgw.mpaas.cn-hangzhou.aliyuncs.com,mi.gdt.qq.com,middle.yun.139.com,mime.baidu.com,minipro.95504.net,mix-api.camera360.com,mlol.qt.qq.com,mob.mddcloud.com.cn,mobile.1qianbao.com,mobile.cebbank.com,mp.weixin.qq.com,mpcs.suning.com,mpos-pic.helipay.com,mrobot.pconline.com.cn,ms.jr.jd.com,mxsa.mxbc.net,napi.ithome.com,new-app-api.ylyk.com,new.vip.weibo.cn,newclient.map.baidu.com,news.l.qq.com,news.ssp.qq.com,ocrifs.ejoy.sinopec.com,open-cms-api.quark.cn,open-cms-api.uc.cn,open.e.kuaishou.cn,open.e.kuaishou.com,open.fitdays.cn,open.qyer.com,open.taou.com,open3.vistastory.com,oss.amap.com,ossweb-img.qq.com,otheve.beacon.qq.com,overseas.weico.cc,p*.meituan.net,p.du.163.com,p0.pipi.cn,p1-lm.adukwai.com,pacdn.m.stock.pingan.com,pan-api.bitqiu.com,pan.baidu.com,peisongapi.meituan.com,pipi.4kya.com,poplayer.template.alibaba.com,portal-xunyou.qingcdn.com,portal.zjzwfw.gov.cn,pss.txffp.com,push.m.youku.com,pzoap.moedot.com,qde.qunar.com,r.inews.qq.com,rengine-platform.llsapp.com,res.cc.cmbimg.com,res.kfc.com.cn,res.pizzahut.com.cn,res.xiaojukeji.com,rescdn.qqmail.com,router-app-api.jdcloud.com,rtbapi.douyucdn.cn,run.api.qyfxgd.cn,s3plus.meituan.net,script.hub,sctel10000.cn,sdk.alibaba.com.ailbaba.me,search-app-m.i4.cn,security.wechat.com,service.4gtv.tv,service.busi.inke.cn,sh-gateway.shihuo.cn,shop-api.retail.mi.com,shopapi.io.mi.com,shopic.sf-express.com,sinaurl.cn,slapi.oray.net,sns.amap.com,sp.kaola.com,ssl.kohsocialapp.qq.com,sso.ifanr.com,ssp.dzh.com.cn,ssp.soulapp.cn,startup.umetrip.com,static.shihuocdn.cn,sub.store,superapp.xgimi.com,support.you.163.com,syh.zybang.com,szdmobile.suzhou.gov.cn,t.cn,t1.market.xiaomi.com,tagit.hyhuo.com,tcmobileapi.17usoft.com,testflight.apple.com,tft-app.cdtft.cn,tiebac.baidu.com,tk.lanjiyin.com,top-widgets-api.xiaozujian.com,track.mm.taou.com,trade-acs.m.taobao.com,mcs-mimp-web.sf-express.com,ucmp.sf-express.com,umerp.umetrip.com,un-acs.youku.com,upload-bbs.mihoyo.com,us.l.qq.com,v.icbc.com.cn,v?-api.miaopai.com,venus.yhd.com,vip7.fzwdyy.cn,vod-movie.maoyan.com,vv.video.qq.com,wallet.95516.com,wap.js.10086.cn,wap.ngchina.cn,wap.spdb.com,wcprd.hilton.com,wcprd.hilton.com.cn,web.chelaile.net.cn,weibo.cn,weixin110.qq.com,wmapi.meituan.com,wrapper.cyapi.cn,www.baidu.com,www.g.cn,www.google.cn,www.i3zh.com,www.meituan.com,www.xiaohongshu.com,www1.elecfans.com,wx.maoyan.com,wxa.wxs.qq.com,wxproj.seeyouyima.com,xyst.yuanfudao.com,y.gtimg.cn,yanxuan.nosdn.127.net,yghsh.cebbank.com,yongche.baidu.com,youtubei.googleapis.com,ytmsout.radio.cn,yunbusiness.ccb.com,z.onewo.com,zconfig.alibabausercontent.com,zj.haier.net,zjdr666.com,zone.guiderank-app.com,ztoread.ziroom.com,zua.zhidiantianxia.cn,mbmodule-openapi.paas.cmbchina.com,webchatapp.fcbox.com,dsp.fcbox.com,customer-app.sto.cn,sto-customer-app.oss-cn-shanghai.aliyuncs.co,hdgateway.zto.com,api-opi.tuhu.cn,api.tuhu.cn,m.10010.com,mkt-gateway.tuhu.cn,fscdn.zto.com,orders.kfc.com.cn,dynamicad.kfc.com.cn,qapi.huolala.cn,appuser-static.huolala.cn,miniprogram.ishansong.com,ads.ishansong.com,*.qmai.cn,*.ems.com.cn,*.yonghuivip.com,*.dmall.com
