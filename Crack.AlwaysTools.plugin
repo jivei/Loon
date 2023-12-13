@@ -1,41 +1,43 @@
 #!name=Crack.常驻会员
-#!desc=B612咔叽,Lightroom,Spotify,Xmind,一言,傲软系列,彩云天气,用药助手,百度文库,美图美颜系列,西窗烛
+#!desc=B612咔叽,Lightroom,Spotify,Xmind,一言,傲软系列,彩云天气,剪映，用药助手,百度文库,美图美颜系列,西窗烛
 #!icon=https://raw.githubusercontent.com/jivei/Loon/main/VIP.PNG
 
 [Script]
 
-http-response https://user-kaji-api.b612kaji.com/v1/purchase/subscription/subscriber/status script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/612.js, requires-body=true, tag=B612咔叽会员
+http-response https://user-kaji-api.b612kaji.com/v1/purchase/subscription/subscriber/status script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/612.js, requires-body=true, tag=B612咔叽会员_3
 
-http-response ^https:\/\/photos\.adobe\.io\/v2\/accounts* script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/lightroom.js, requires-body=true, tag=Lightroom会员
+http-response ^https:\/\/photos\.adobe\.io\/v2\/accounts* script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/lightroom.js, requires-body=true, tag=Lightroom会员_4
 
-http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js, tag=Spotify会不能超高音质
+http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js, tag=Spotify会不能超高音质_5
 
-http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, tag=Spotify员不能超高音质
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, tag=Spotify员不能超高音质_6
 
-http-response ^https?:\/\/www\.xmind\.(cn|net|app)\/.+\/devices script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Xmind.js, requires-body=true, tag=Xmind思维导图会员
+http-response ^https?:\/\/www\.xmind\.(cn|net|app)\/.+\/devices script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Xmind.js, requires-body=true, tag=Xmind思维导图会员_7
 
-http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ddgksf2013/dev/raw/main/YiYanProCrack.js, requires-body=true, tag=一言会员
+http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ddgksf2013/dev/raw/main/YiYanProCrack.js, requires-body=true, tag=一言会员_8
 
-http-response ^https?:\/\/.*\.(aoscdn\.com|apsapp\.cn) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/arqjt.js, requires-body=true, tag=傲软抠图傲软扫描傲软PDF转换傲软PDF编辑傲软投屏咖映轻闪PDF乃糖小组件佐糖照片会员
+http-response ^https?:\/\/.*\.(aoscdn\.com|apsapp\.cn) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/arqjt.js, requires-body=true, tag=傲软抠图傲软扫描傲软PDF转换傲软PDF编辑傲软投屏咖映轻闪PDF乃糖小组件佐糖照片会员_9
 
-http-response ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/caiyun.js, requires-body=true, tag=彩云天气会员
+http-response ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/caiyun.js, requires-body=true, tag=彩云天气会员_10
 
-http-request ^https://newdrugs.dxy.cn script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/yyzscook.js, tag=用药助手会
+http-request ^https://newdrugs.dxy.cn script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/yyzscook.js, tag=用药助手会_11
 
-http-response https://newdrugs.dxy.cn/app/user/pro/stat? script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/yyzs2.js, requires-body=true, tag=用药助手员
+http-response https://newdrugs.dxy.cn/app/user/pro/stat? script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/yyzs2.js, requires-body=true, tag=用药助手员_12
 
-http-response ^https:\/\/appwk\.baidu\.com\/naapi\/(user\/getinfo|doc\/getdocdownloadcopywriter) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/BaiduWenku_crack.js, requires-body=true, tag=百度文库会员
+http-response ^https:\/\/appwk\.baidu\.com\/naapi\/(user\/getinfo|doc\/getdocdownloadcopywriter) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/BaiduWenku_crack.js, requires-body=true, tag=百度文库会员_13
 
-http-response ^https?:\/\/api-.*\.meitu\.com\/(.+\/user\/vip_info|user\/show) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/mtxl.js, requires-body=true, tag=美图系列会
+http-response ^https?:\/\/api-.*\.meitu\.com\/(.+\/user\/vip_info|user\/show) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/mtxl.js, requires-body=true, tag=美图系列会员_14
 
-http-response ^https?:\/\/api\.posters\.meitu\.com\/matting\/znxc\.json script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/meituxiuxiu.js, requires-body=true, tag=美图秀秀AI会员
+http-response ^https?:\/\/api\.posters\.meitu\.com\/matting\/znxc\.json script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/meituxiuxiu.js, requires-body=true, tag=美图秀秀AI会员_15
 
-http-response ^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/mtxx.js, requires-body=true, tag=美图秀秀会员
+http-response ^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/mtxx.js, requires-body=true, tag=美图秀秀会员_16
 
-http-response ^https?:\/\/(api|community)\.meiyan\.com\/(vip|v\d)\/(user_center|user_info|user\/(.*?)) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/myxj.js, requires-body=true, tag=美颜相机会员
+http-response ^https?:\/\/(api|community)\.meiyan\.com\/(vip|v\d)\/(user_center|user_info|user\/(.*?)) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/myxj.js, requires-body=true, tag=美颜相机会员_17
 
-http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ddgksf2013/dev/raw/main/XiChuangZhuProCrack.js, requires-body=true, tag=西窗烛会员
+http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ddgksf2013/dev/raw/main/XiChuangZhuProCrack.js, requires-body=true, tag=西窗烛会员_18
+
+http-request ^https?:\/\/commerce-api-.*\.faceu\.mobi\/commerce\/v1\/(subscription\/user_info|purchase\/draft_unlock|effect\/check_effects) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/VideoFusionVipCrack.js, tag=剪映会员_19
 
 [MITM]
 
-hostname = user-kaji-api.b612kaji.com,photos.adobe.io,spclient.wg.spotify.com,*xmind.*,app.yiyan.art,*.aoscdn.com,*.apsapp.cn,biz.cyapi.cn,newdrugs.dxy.cn,appwk.baidu.com,*.xiuxiu.meitu.com,api.posters.meitu.com,api-sub.meitu.com,api-*.meitu.com,*.meiyan.com,lchttpapi.xczim.com
+hostname = api*.faceu.mobi,api3-lq.faceu.mobi,commerce-api-lf.faceu.mobi,commerce-api-lq.faceu.mobi,lv-api-lq.ulikecam.com,lv-api-hl.ulikecam.com,user-kaji-api.b612kaji.com,photos.adobe.io,spclient.wg.spotify.com,*xmind.*,app.yiyan.art,*.aoscdn.com,*.apsapp.cn,biz.cyapi.cn,newdrugs.dxy.cn,appwk.baidu.com,*.xiuxiu.meitu.com,api.posters.meitu.com,api-sub.meitu.com,api-*.meitu.com,*.meiyan.com,lchttpapi.xczim.com
