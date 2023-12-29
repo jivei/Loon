@@ -1,3 +1,8 @@
+
+#!desc=净化APP广告
+#!icon=https://raw.githubusercontent.com/fmz200/wool_scripts/main/icons/apps/AdGuard.png
+#!homepage = https://zh.wikipedia.org/zh-hans/崇禎帝
+
 [Rewrite]
 
 # 网易云音乐version8.9.20以下
