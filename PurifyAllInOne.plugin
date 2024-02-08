@@ -151,7 +151,6 @@ https://zone.guiderank-app.com/guiderank-web/app/ad/listLaunchADByCity.do - reje
 ^https?:\/\/optimus-ads\.amap\.com\/uploadimg\/ - reject
 # 国家地理
 ^https?:\/\/dili\.bdatu\.com\/jiekou\/ad\/ - reject
-# - reject
 # 虎扑
 ^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/(interfaceAdMonitor|interfaceAd)\/ - reject
 ^https?:\/\/games\.mobileapi\.hupu\.com\/.+?\/status\/init - reject
