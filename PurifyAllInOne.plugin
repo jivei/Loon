@@ -66,7 +66,7 @@ https:\/\/pan\.baidu\.com\/component\/view\/(1510|1130)\?(vip|from) - reject
 ^https?:\/\/atrace.chelaile.net.cn\/adpub\/ - reject
 ^https?:\/\/atrace.chelaile.net.cn\/exhibit\?&adv_image - reject
 ^https?:\/\/pic1.chelaile.net.cn\/adv\/ - reject
-# CSDN 
+#CSDN 
 ^https?:\/\/app-gw\.csdn\.net\/silkroad-api\/api\/v\d\/assemble\/list\/pub\/channel\/app_open_screen_ad - reject
 # 超星学习通
 ^https?:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig - reject
