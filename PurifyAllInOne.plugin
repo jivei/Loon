@@ -13,8 +13,6 @@
 ^https:\/\/pic\d\.ajkimg\.com\/mat\/\w+\?imageMogr\d\/format\/jpg\/thumbnail\/\d{3}x\d{4}$ - reject
 ^https:\/\/.+\.58cdn\.com\.cn\/brandads - reject
 ^https?:\/\/[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+){1,3}(:\d+)?\/api\/v\d\/advert - reject
-# 12123
-^https:\/\/gab\.122\.gov\.cn\/eapp\/m\/sysquery - reject
 # 36kr
 ^https?:\/\/gateway\.36kr\.com\/api\/adx\/ad\/show - reject
 # 500
