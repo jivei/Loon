@@ -1,6 +1,6 @@
 #!name=Checkincookie
 #!desc=Cookie全部获取之后关闭此模块避免不必要的MitM若cookie过期再次开启获取即可
-#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1048.png
+#!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Loop.png
 
 [Script]
 # 网易云音乐音乐人获取cookie
