@@ -1,5 +1,5 @@
 #!name=Crack.常驻会员
-#!desc=B612咔叽,Adobe-LR-PS,Spotify,Xmind,一言,傲软系列,彩云天气,剪映,百度文库,美图美颜系列,西窗烛
+#!desc=B612咔叽,Adobe-LR-PS,Spotify,一言,傲软系列,彩云天气,剪映,百度文库,美图美颜系列,西窗烛
 #!icon=https://raw.githubusercontent.com/jivei/Loon/main/VIP.PNG
 
 
@@ -13,8 +13,6 @@ http-response https://lcs-mobile-cops.adobe.io/mobiles/access_profile/v3 script-
 http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js, tag=Spotify会不能超高音质
 
 http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, tag=Spotify员不能超高音质
-
-http-response ^https?:\/\/www\.xmind\.(cn|net|app)\/.+\/devices script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Xmind.js, requires-body=true, tag=Xmind思维导图会员
 
 http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ddgksf2013/dev/raw/main/YiYanProCrack.js, requires-body=true, timeout=60, tag=一言会员
 
