@@ -3,7 +3,6 @@
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static_1.png
 
 [Script]
-cron "30 0 * * *" script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/atour.js, timeout=120, tag=亚朵酒店签到
 
 cron "31 0 * * *" script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js, timeout=120, tag=华住签到任务
 
