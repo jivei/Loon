@@ -4,7 +4,7 @@
 
 [Script]
 
-cron "31 0 * * *" script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js, timeout=120, tag=华住签到任务
+cron "1 0 * * *" script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js, timeout=120, tag=华住签到任务
 
 #cron "32 0 * * *" script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/ithome.js, timeout=120, tag=之家签到任务
 
