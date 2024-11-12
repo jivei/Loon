@@ -1,7 +1,15 @@
-#!name=Crack&Tools.常驻会员&去广告
-#!desc=B612咔叽,Adobe-LR-PS,EMBY,Spotify,一言,傲软系列,彩云天气,百度文库,美图美颜系列,西窗烛,
+#!name=Crack&Tools
+#!desc=会员破解，签到以及去广告补充
 #!icon=https://raw.githubusercontent.com/jivei/Loon/refs/heads/main/icon/iPhone.png
+#!tag = 自用工具集
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(749)
+#!date = 2024-11-13 07:08:00
 
+[Argument]
+CaptureCookie = switch, false, true, tag = 捕获Cookie, desc = 此开关控制插件是否捕获Cookie
+CRONEXP = input, "0 8 * * *", tag = 定时参数, desc = 这里需要输入符合CRON表达式的参数
 
 [Rewrite]
 # > kudi
@@ -42,6 +50,23 @@ http-response ^https?:\/\/(api|community)\.meiyan\.com\/(vip|v\d)\/(user_center|
 
 http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ddgksf2013/dev/raw/main/XiChuangZhuProCrack.js, requires-body=true, timeout=60, tag=西窗烛会员
 
+
+
+# 华住会APP->登陆捕获Cookie->新用户需要住一晚方可签到
+http-request ^https?:\/\/hweb-personalcenter\.huazhu\.com\/login\/autoLogin$ script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js,  requires-body = true, tag = 华住会捕获cookie, enable = {CaptureCookie}
+# 华住会定时签到
+cron {CRONEXP} script-path = https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js, tag = 华住签到任务, timeout = 120, argument=[{AK},{SK},{MAX_RETRIES}]
+
+# 打开百度贴吧APP捕获Cookie
+http-request ^https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js,, requires-body = true, tag = 百度贴吧APP捕获Cookie1, enable = {CaptureCookie}
+
+http-request ^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/channelIconConfig script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js, requires-body = true, tag = 百度贴吧APP捕获Cookie2, enable = {CaptureCookie}
+
+http-request ^https?:\/\/tiebac\.baidu\.com\/c\/u\/follow\/getFoldedMessageUserInfo script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js, requires-body = true, tag = 百度贴吧APP捕获Cookie3, enable = {CaptureCookie}
+# 百度贴吧定时签到
+cron {CRONEXP} script-path = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, tag = 贴吧每日签到, timeout = 120, argument=[{AK},{SK},{MAX_RETRIES}]
+
+
 [MITM]
-hostname = mb3admin.com, vas.wps.cn, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
+hostname = *.huazhu.com, c.tieba.baidu.com, mb3admin.com, vas.wps.cn, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
 
