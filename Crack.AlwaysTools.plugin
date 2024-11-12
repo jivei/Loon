@@ -1,6 +1,14 @@
-#!name=Crack.常驻会员
+#!name=Crack&Tools.常驻会员&去广告
 #!desc=B612咔叽,Adobe-LR-PS,Spotify,一言,傲软系列,彩云天气,百度文库,美图美颜系列,西窗烛
 #!icon=https://raw.githubusercontent.com/jivei/Loon/main/VIP.PNG
+
+
+[Rewrite]
+# > kudi
+^https?:\/\/gateway\.abite\.com\/cotti-capi\/customer\/position\/list\?code=cotti-launch-window - reject-200
+^https?:\/\/gateway\.cotticoffee\.com\/cotti-capi\/customer\/position\/list\?code=cotti-launch-window - reject-200
+# > ruixinkafei
+^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/(homePage\/contactor\/modules|app\/adposNew) - reject-200
 
 
 [Script]
@@ -33,5 +41,5 @@ http-response ^https?:\/\/(api|community)\.meiyan\.com\/(vip|v\d)\/(user_center|
 http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ddgksf2013/dev/raw/main/XiChuangZhuProCrack.js, requires-body=true, timeout=60, tag=西窗烛会员
 
 [MITM]
-hostname = lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, biz.cyapi.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, *.meiyan.com, lchttpapi.xczim.com
+hostname = lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, biz.cyapi.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
 
