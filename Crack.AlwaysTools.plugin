@@ -1,5 +1,5 @@
 #!name=Crack&Tools.常驻会员&去广告
-#!desc=B612咔叽,Adobe-LR-PS,Spotify,一言,傲软系列,彩云天气,百度文库,美图美颜系列,西窗烛,瑞幸库迪去广告
+#!desc=B612咔叽,Adobe-LR-PS,EMBY,Spotify,一言,傲软系列,彩云天气,百度文库,美图美颜系列,西窗烛,
 #!icon=https://raw.githubusercontent.com/Orz-3/mini/master/Color/Touhou.png
 
 
@@ -12,6 +12,8 @@
 
 
 [Script]
+http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice requires-body=1,max-size=0, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js, tag=Emby会员
+
 http-response ^https:\/\/vas\.wps\.cn\/query\/api\/v1\/list_purchase_info script-path=https://raw.githubusercontent.com/510004015/Quantumult_X/Remote/Premium/WPSOffice.js, requires-body=true, timeout=60, tag=WPS会员
 
 http-response https://user-kaji-api.b612kaji.com/v1/purchase/subscription/subscriber/status script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/612.js, requires-body=true, tag=B612咔叽会员
@@ -28,8 +30,6 @@ http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com
 
 http-response ^https?:\/\/.*\.(aoscdn\.com|apsapp\.cn) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/arqjt.js, requires-body=true, tag=傲软抠图扫描PDF转换PDF编辑投屏咖映轻闪PDF乃糖小组件佐糖照片会员
 
-http-response ^https:\/\/biz\.cyapi\.cn\/(p\/v1\/vip_info|v2\/user) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/caiyun.js, requires-body=true, tag=彩云天气会员
-
 http-response ^https:\/\/appwk\.baidu\.com\/naapi\/(user\/getinfo|doc\/getdocdownloadcopywriter) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/BaiduWenku_crack.js, requires-body=true, timeout=30, tag=百度文库会员
 
 http-response ^https?:\/\/api-.*\.meitu\.com\/(.+\/user\/vip_info|user\/show) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/mtxl.js, requires-body=true, tag=美图系列会员
@@ -43,5 +43,5 @@ http-response ^https?:\/\/(api|community)\.meiyan\.com\/(vip|v\d)\/(user_center|
 http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ddgksf2013/dev/raw/main/XiChuangZhuProCrack.js, requires-body=true, timeout=60, tag=西窗烛会员
 
 [MITM]
-hostname = vas.wps.cn, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, biz.cyapi.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
+hostname = mb3admin.com, vas.wps.cn, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
 
