@@ -8,9 +8,14 @@
 #!date = 2024-11-13 07:08:00
 
 [Argument]
-CaptureCookie = switch, false, true, tag = 捕获Cookie, desc = 此开关控制插件是否捕获Cookie
-CRONEXP = input, "0 8 * * *", tag = 定时参数, desc = 这里需要输入符合CRON表达式的参数
 
+CaptureCookie = switch, false, true, tag = 捕获Cookie, desc = 此开关控制插件是否捕获Cookie
+AK = input, "", tag = 百度API Key, desc = 这里需要输入有效的百度API Key
+SK = input, "", tag = 百度Secret Key, desc = 这里需要输入有效的百度Secret Key
+DAY = input, "1", tag = 兑换天数, desc = 每日签到时自动兑换的天数，可不做更改。
+MAX_RETRIES = input, "5", tag = 失败重试次数, desc = 仅允许填写阿拉伯数字
+# TIMEOUT = input, "120", tag = 脚本超时参数, desc = 仅允许填写阿拉伯数字，单位为秒。 // 此项暂不支持传参
+CRONEXP = input, "2 0 * * *", tag = 定时参数, desc = 这里需要输入符合CRON表达式的参数
 [Rewrite]
 # > kudi
 ^https?:\/\/gateway\.abite\.com\/cotti-capi\/customer\/position\/list\?code=cotti-launch-window - reject-200
@@ -64,7 +69,12 @@ http-request ^https?:\/\/tiebac\.baidu\.com\/c\/u\/follow\/getFoldedMessageUserI
 # 百度贴吧定时签到
 cron {CRONEXP} script-path = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, tag = 贴吧每日签到, timeout = 120, argument=[{AK},{SK},{MAX_RETRIES}]
 
+# 捕获Cookie
+http-request ^https:\/\/moapi\.wps\.cn\/app\/ios\/v1\/app$ script-path = https://kelee.one/Resource/Script/WPS/WPS_checkin.js, requires-body = true, tag = 捕获Cookie, enable = {CaptureCookie}
+
+# 定时签到
+cron {CRONEXP} script-path = https://kelee.one/Resource/Script/WPS/WPS_checkin.js, tag = WPS每日签到, timeout = 120, argument=[{AK},{SK},{MAX_RETRIES}]
 
 [MITM]
-hostname = *.huazhu.com, c.tieba.baidu.com, mb3admin.com, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
+hostname = moapi.wps.cn,*.huazhu.com, c.tieba.baidu.com, mb3admin.com, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
 
