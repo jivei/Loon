@@ -1,1 +1,49 @@
-s
+#!name=工具集
+#!desc=会员破解以及去广告补充
+#!icon=https://raw.githubusercontent.com/jivei/Loon/refs/heads/main/icon/iPhone.png
+#!tag = 工具集
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(749)
+#!date = 2024-11-13 07:08:00
+
+
+[Rewrite]
+# 库迪
+^https?:\/\/gateway\.abite\.com\/cotti-capi\/customer\/position\/list\?code=cotti-launch-window - reject-200
+^https?:\/\/gateway\.cotticoffee\.com\/cotti-capi\/customer\/position\/list\?code=cotti-launch-window - reject-200
+# 瑞幸
+^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/sys\/(homePage\/contactor\/modules|app\/adposNew) - reject-200
+
+
+[Script]
+http-response ^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice requires-body=1,max-size=0, script-path=https://raw.githubusercontent.com/Tartarus2014/Script/master/Emby.js, tag=Emby会员
+
+http-response https://user-kaji-api.b612kaji.com/v1/purchase/subscription/subscriber/status script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/612.js, requires-body=true, tag=B612咔叽会员
+
+http-response ^https:\/\/photos\.adobe\.io\/v2\/accounts* script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/lightroom.js, requires-body=true, tag=Lightroom会员
+
+http-response https://lcs-mobile-cops.adobe.io/mobiles/access_profile/v3 script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/PSExpress.js, requires-body=true, timeout=60, tag=PSExpress
+
+http-request ^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js, tag=Spotify会不能超高音质
+
+http-response ^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$ script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js, requires-body=true, binary-body-mode=true, tag=Spotify员不能超高音质
+
+http-response ^https:\/\/app\.yiyan\.art\/yiyan\/ script-path=https://github.com/ddgksf2013/dev/raw/main/YiYanProCrack.js, requires-body=true, timeout=60, tag=一言会员
+
+http-response ^https?:\/\/.*\.(aoscdn\.com|apsapp\.cn) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/arqjt.js, requires-body=true, tag=傲软抠图扫描PDF转换PDF编辑投屏咖映轻闪PDF乃糖小组件佐糖照片会员
+
+http-response ^https:\/\/appwk\.baidu\.com\/naapi\/(user\/getinfo|doc\/getdocdownloadcopywriter) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/BaiduWenku_crack.js, requires-body=true, timeout=30, tag=百度文库会员
+
+http-response ^https?:\/\/api-.*\.meitu\.com\/(.+\/user\/vip_info|user\/show) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/mtxl.js, requires-body=true, tag=美图系列会员
+
+http-response ^https?:\/\/api\.posters\.meitu\.com\/matting\/znxc\.json script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/meituxiuxiu.js, requires-body=true, timeout=30, tag=美图秀秀AI会员
+
+http-response ^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.+\/(vip|user|h\d|center|home) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/mtxx.js, requires-body=true, tag=美图秀秀会员
+
+http-response ^https?:\/\/(api|community)\.meiyan\.com\/(vip|v\d)\/(user_center|user_info|user\/(.*?)) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/myxj.js, requires-body=true, tag=美颜相机会员
+
+http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ddgksf2013/dev/raw/main/XiChuangZhuProCrack.js, requires-body=true, timeout=60, tag=西窗烛会员
+
+[MITM]
+hostname = moapi.wps.cn,*.huazhu.com, c.tieba.baidu.com, mb3admin.com, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
