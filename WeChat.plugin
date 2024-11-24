@@ -1,13 +1,13 @@
-# NAME: WeChat
-# AUTHOR: blackmatrix7
-# REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2024-07-03 16:17:23
-# DOMAIN: 8
-# DOMAIN-SUFFIX: 22
-# IP-ASN: 1
-# USER-AGENT: 2
-# TOTAL: 33
+#!name=Wechat分流
+#!desc=微信用户选择Direct，Wechat用户选择Proxy
 #!icon=https://raw.githubusercontent.com/jivei/Loon/refs/heads/main/icon/wechat.png
+#!tag = 分流
+#!system = 
+#!system_version = 
+#!loon_version = 3.2.1(749)
+#!date = 2024-11-13 07:08:00
+
+
 [Rule]
 DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,PROXY
 DOMAIN,btrace.qq.com,PROXY
