@@ -7,6 +7,7 @@
 # IP-ASN: 1
 # USER-AGENT: 2
 # TOTAL: 33
+#!icon=https://raw.githubusercontent.com/jivei/Loon/refs/heads/main/icon/wechat.png
 [Rule]
 DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,DIRECT
 DOMAIN,btrace.qq.com,DIRECT
