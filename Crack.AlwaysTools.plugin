@@ -11,14 +11,16 @@
 
 [Argument]
 
-CaptureCookie = switch, false, true, tag = 捕获Cookie, desc = 此开关控制插件是否捕获Cookie
-AK = input, "", tag = 百度API Key, desc = 这里需要输入有效的百度API Key
-SK = input, "", tag = 百度Secret Key, desc = 这里需要输入有效的百度Secret Key
-DAY = input, "1", tag = 兑换天数, desc = 每日签到时自动兑换的天数，可不做更改。
-MAX_RETRIES = input, "5", tag = 失败重试次数, desc = 仅允许填写阿拉伯数字
-# TIMEOUT = input, "120", tag = 脚本超时参数, desc = 仅允许填写阿拉伯数字，单位为秒。 // 此项暂不支持传参
-CRONEXP = input, "2 0 * * *", tag = 定时参数, desc = 这里需要输入符合CRON表达式的参数
+arg1 = input,"2 0 * * *",tag=华住会定时签到时间
+arg2 = switch,true,tag=华住会定时签到任务开关
 
+arg3 = input,"3 0 * * *",tag=百度贴吧定时签到时间
+arg4 = switch,true,tag=贴吧定时签到任务开关
+
+arg5 = input,"1 0 * * *",tag=WPS定时签到时间
+arg6 = switch,true,tag=WPS定时签到任务开关
+
+CaptureCookie = switch, false, true, tag = 捕获Cookie, desc = 此开关控制插件是否捕获Cookie
 [Rewrite]
 # > kudi
 ^https?:\/\/gateway\.abite\.com\/cotti-capi\/customer\/position\/list\?code=cotti-launch-window - reject-200
@@ -54,29 +56,20 @@ http-response ^https?:\/\/((h5|api)\.xiuxiu|api-sub|api\.posters)\.meitu\.com\/.
 
 http-response ^https?:\/\/(api|community)\.meiyan\.com\/(vip|v\d)\/(user_center|user_info|user\/(.*?)) script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/myxj.js, requires-body=true, tag=美颜相机会员
 
-http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ddgksf2013/dev/raw/main/XiChuangZhuProCrack.js, requires-body=true, timeout=60, tag=西窗烛会员
+http-response https://lchttpapi.xczim.com/* script-path=https://github.com/ddgksf2013/dev/raw/main/XiChuangZhuProCrack.js, requires-body=true, timeout=60, tag=西窗烛
 
 
+# 华住会定时签到
+cron {arg1} script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js, enable= {arg2}, tag=华住签到任务
+# 百度贴吧定时签到
+cron {arg3} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, enable= {arg4}, tag=贴吧每日签到
 
 # 华住会APP->登陆捕获Cookie->新用户需要住一晚方可签到
 http-request ^https?:\/\/hweb-personalcenter\.huazhu\.com\/login\/autoLogin$ script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js,  requires-body = true, tag = 华住会捕获cookie, enable = {CaptureCookie}
-# 华住会定时签到
-cron {CRONEXP} script-path = https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js, tag = 华住签到任务, timeout = 120, argument=[{AK},{SK},{MAX_RETRIES}]
-
-# 打开百度贴吧APP捕获Cookie
+# 百度贴吧APP捕获Cookie
 http-request ^https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js,, requires-body = true, tag = 百度贴吧APP捕获Cookie1, enable = {CaptureCookie}
-
 http-request ^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/channelIconConfig script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js, requires-body = true, tag = 百度贴吧APP捕获Cookie2, enable = {CaptureCookie}
-
 http-request ^https?:\/\/tiebac\.baidu\.com\/c\/u\/follow\/getFoldedMessageUserInfo script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js, requires-body = true, tag = 百度贴吧APP捕获Cookie3, enable = {CaptureCookie}
-# 百度贴吧定时签到
-cron {CRONEXP} script-path = https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, tag = 贴吧每日签到, timeout = 120, argument=[{AK},{SK},{MAX_RETRIES}]
-
-# 捕获Cookie
-http-request ^https:\/\/moapi\.wps\.cn\/app\/ios\/v1\/app$ script-path = https://kelee.one/Resource/Script/WPS/WPS_checkin.js, requires-body = true, tag = 捕获Cookie, enable = {CaptureCookie}
-
-# 定时签到
-cron {CRONEXP} script-path = https://kelee.one/Resource/Script/WPS/WPS_checkin.js, tag = WPS每日签到, timeout = 120, argument=[{AK},{SK},{MAX_RETRIES}]
 
 [MITM]
 hostname = moapi.wps.cn,*.huazhu.com, c.tieba.baidu.com, mb3admin.com, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
