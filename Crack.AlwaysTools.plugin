@@ -17,7 +17,8 @@ arg2 = switch,true,tag=华住会定时签到任务开关
 arg3 = input,"3 0 * * *",tag=百度贴吧定时签到时间
 arg4 = switch,true,tag=贴吧定时签到任务开关
 
-CaptureCookie = switch, false, true, tag = 捕获Cookie开关, desc = 此开关控制插件是否捕获Cookie
+CaptureCookie1 = switch, false, true, tag = 华住会捕获Cookie开关, desc = 此开关控制插件是否捕获Cookie
+CaptureCookie2 = switch, false, true, tag = 百度贴吧捕获Cookie开关, desc = 此开关控制插件是否捕获Cookie
 
 [Rewrite]
 # > kudi
@@ -63,11 +64,11 @@ cron {arg1} script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hz
 cron {arg3} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, enable= {arg4}, tag=贴吧每日签到
 
 # 华住会APP->登陆捕获Cookie->新用户需要住一晚方可签到
-http-request ^https?:\/\/hweb-personalcenter\.huazhu\.com\/login\/autoLogin$ script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js,  requires-body = true, tag = 华住会捕获cookie, enable = {CaptureCookie}
+http-request ^https?:\/\/hweb-personalcenter\.huazhu\.com\/login\/autoLogin$ script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js,  requires-body = true, tag = 华住会捕获cookie, enable = {CaptureCookie1}
 # 百度贴吧APP捕获Cookie
-http-request ^https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js,, requires-body = true, tag = 百度贴吧APP捕获Cookie1, enable = {CaptureCookie}
-http-request ^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/channelIconConfig script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js, requires-body = true, tag = 百度贴吧APP捕获Cookie2, enable = {CaptureCookie}
-http-request ^https?:\/\/tiebac\.baidu\.com\/c\/u\/follow\/getFoldedMessageUserInfo script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js, requires-body = true, tag = 百度贴吧APP捕获Cookie3, enable = {CaptureCookie}
+http-request ^https?:\/\/(c\.tieba\.baidu\.com|180\.97\.\d+\.\d+)\/c\/s\/login script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js,, requires-body = true, tag = 百度贴吧APP捕获Cookie1, enable = {CaptureCookie2}
+http-request ^https?:\/\/c\.tieba\.baidu\.com\/c\/s\/channelIconConfig script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js, requires-body = true, tag = 百度贴吧APP捕获Cookie2, enable = {CaptureCookie2}
+http-request ^https?:\/\/tiebac\.baidu\.com\/c\/u\/follow\/getFoldedMessageUserInfo script-path=https://raw.githubusercontent.com/chxm1023/Task/main/TieBa/TieBa_signin.js, requires-body = true, tag = 百度贴吧APP捕获Cookie3, enable = {CaptureCookie2}
 
 [MITM]
 hostname = moapi.wps.cn,*.huazhu.com, c.tieba.baidu.com, mb3admin.com, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, capi.lkcoffee.com , *.meiyan.com, lchttpapi.xczim.com
