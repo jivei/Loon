@@ -17,10 +17,8 @@ arg2 = switch,true,tag=华住会定时签到任务开关
 arg3 = input,"3 0 * * *",tag=百度贴吧定时签到时间
 arg4 = switch,true,tag=贴吧定时签到任务开关
 
-arg5 = input,"1 0 * * *",tag=WPS定时签到时间
-arg6 = switch,true,tag=WPS定时签到任务开关
+CaptureCookie = switch, false, true, tag = 捕获Cookie开关, desc = 此开关控制插件是否捕获Cookie
 
-CaptureCookie = switch, false, true, tag = 捕获Cookie, desc = 此开关控制插件是否捕获Cookie
 [Rewrite]
 # > kudi
 ^https?:\/\/gateway\.abite\.com\/cotti-capi\/customer\/position\/list\?code=cotti-launch-window - reject-200
