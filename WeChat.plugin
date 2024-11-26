@@ -9,6 +9,7 @@
 
 
 [Rule]
+DOMAIN,chinadigitaltimes.net,PROXY
 DOMAIN,apd-pcdnwxlogin.teg.tencent-cloud.net,PROXY
 DOMAIN,btrace.qq.com,PROXY
 DOMAIN,dldir1.qq.com,PROXY
