@@ -17,8 +17,12 @@ arg2 = switch,true,tag=华住会定时签到任务开关
 arg3 = input,"3 0 * * *",tag=百度贴吧定时签到时间
 arg4 = switch,true,tag=贴吧定时签到任务开关
 
+arg8 = input,"4 0 * * *",tag=途虎养车定时签到时间
+arg9 = switch,true,tag=途虎养车签到任务开关
+
 CaptureCookie1 = switch, false, true, tag = 华住会捕获Cookie开关, desc = 此开关控制插件是否捕获Cookie
 CaptureCookie2 = switch, false, true, tag = 百度贴吧捕获Cookie开关, desc = 此开关控制插件是否捕获Cookie
+CaptureCookie9 = switch, false, true, tag = 途虎养车捕获Cookie开关, desc = 此开关控制插件是否捕获Cookie
 
 [Rewrite]
 # > kudi
@@ -63,7 +67,7 @@ cron {arg1} script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hz
 cron {arg3} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, enable= {arg4}, tag=贴吧每日签到
 
 # 途虎养车签到
-cron {arg9} script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/tuhu.js,tag = 途虎养车每日签到,enable= {arg9}
+cron {arg8} script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/tuhu.js,tag = 途虎养车每日签到,enable= {arg9}
 
 
 
