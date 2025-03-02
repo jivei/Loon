@@ -62,6 +62,14 @@ cron {arg1} script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hz
 # 百度贴吧定时签到
 cron {arg3} script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/tieba/tieba_signin.js, enable= {arg4}, tag=贴吧每日签到
 
+# 途虎养车签到
+cron {arg9} script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/tuhu.js,tag = 途虎养车每日签到,enable= {arg9}
+
+
+
+
+
+http-request https:\/\/api\.tuhu\.cn\/User\/GetInternalCenterInfo tag=途虎养车获取cookie, script-path=https://raw.githubusercontent.com/Sliverkiss/GoodNight/master/Script/tuhu.js,requires-body=0, enable = {CaptureCookie9}
 # 华住会APP->登陆捕获Cookie->新用户需要住一晚方可签到
 http-request ^https?:\/\/hweb-personalcenter\.huazhu\.com\/login\/autoLogin$ script-path=https://raw.githubusercontent.com/jivei/Surge/main/js/hzh.js,  requires-body = true, tag = 华住会捕获cookie, enable = {CaptureCookie1}
 # 百度贴吧APP捕获Cookie
@@ -74,5 +82,5 @@ DOMAIN,pincong.rocks,PROXY
 DOMAIN,chinadigitaltimes.net,PROXY
 
 [MITM]
-hostname = *.huazhu.com, c.tieba.baidu.com, mb3admin.com, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, *.meiyan.com, lchttpapi.xczim.com
+hostname = api.tuhu.cn. *.huazhu.com, c.tieba.baidu.com, mb3admin.com, lcs-mobile-cops.adobe.io, api*.faceu.mobi, api3-lq.faceu.mobi, commerce-api-lf.faceu.mobi, commerce-api-lq.faceu.mobi, lv-api-lq.ulikecam.com, lv-api-hl.ulikecam.com, user-kaji-api.b612kaji.com, photos.adobe.io, spclient.wg.spotify.com, *xmind.*, app.yiyan.art, *.aoscdn.com, *.apsapp.cn, newdrugs.dxy.cn, appwk.baidu.com, *.xiuxiu.meitu.com, api.posters.meitu.com, api-sub.meitu.com, api-*.meitu.com, gateway.cotticoffee.com, *.meiyan.com, lchttpapi.xczim.com
 
